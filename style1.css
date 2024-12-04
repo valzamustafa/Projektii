@@ -1,0 +1,23 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: transparent;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  
+  header.scrolled {
+    background: rgba(0, 0, 0, 0.6); 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
