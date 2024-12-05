@@ -1,0 +1,138 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8)
+    ),
+    url('images/Dashboard.avif') no-repeat center fixed; 
+}
+
+body {
+    background-size: cover;
+    color: white;
+    padding-top: 80px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: transparent;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #f0a500;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    .navbar ul li {
+        margin-bottom: 10px;
+    }
+}
+
+.menu-icon {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.Tittle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 65%;
+}
+
+.Tittle h1 {
+    font-size: 5rem;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+hr {
+    border: 1px solid #fff;
+    margin: 20px 0;
+    width: 80%; 
+    max-width: 300px;  
+    position: relative;
+}
+
+.ContacInfo, .contact-form {
+    width: 300px;
+    padding: 20px;
+    transform: skewX(-10deg);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgb(226, 215, 215);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 35%; 
+    transform: translate(-50%, -50%) skewX(-10deg);
+    background-color: rgba(192, 158, 158, 0.5);
+    padding-top: 20px; 
+    transition: left 0.5s ease-in-out;
+}
+.contact-form{
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgb(226, 215, 215);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    left: 65%;
+    background-color: rgba(192, 158, 158, 0.5);
+    padding-top: 20px; 
+}
+
+.Format{
+    display: flex;
+}
+.contact-form input, .contact-form textarea {
+    border: none; 
+    background-color: rgba(213, 193, 193, 0.5);
+    color: rgb(226, 215, 215); 
+    padding: 10px;
+    margin: 5px 0;
+   
+}
