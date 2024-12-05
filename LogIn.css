@@ -5,8 +5,8 @@ body, html {
 }
 body {
     background: linear-gradient(
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.7)
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
     ),
     url('images/backgroundLogIn.jpg') no-repeat center fixed;
     background-size: cover;
