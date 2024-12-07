@@ -2,17 +2,20 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; 
+    width: 100%;
 }
 body {
     background: linear-gradient(
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
         ),
         url('images/backgroundLogIn.jpg') no-repeat center fixed;
-        background-size: cover;
-        background-size: cover;
-        color: white;
+    background-size: cover;
+    color: white;
+    background-size: 100% 100%;
 }
+
 header {
     position: fixed;
     width: 100%;
@@ -22,6 +25,7 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 80px;
+    align-items: center;
 }
 
 .navbar ul {
@@ -42,7 +46,6 @@ header {
 .navbar ul li a:hover {
     color: #f0a500;
 }
-
 
 @media (max-width: 768px) {
     .navbar ul {
@@ -81,9 +84,9 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 180px; 
     height: 100vh;
-    padding: 20px;
 }
 
 .login-box {
@@ -93,6 +96,7 @@ header {
     width: 350px;
     text-align: center;
     color: white;
+    margin-top: 40px; 
 }
 
 
@@ -101,23 +105,24 @@ header {
 }
 
 .input-group {
+    display: block;
     margin-bottom: 15px;
-    text-align: left;
+
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
     color: white;
-    outline: none;
+    box-sizing: border-box;
 }
 
 .option {
