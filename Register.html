@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
+  
     <header>
         <div class="menu-icon" id="menu-icon">&#9776;</div> 
         <nav class="navbar">
@@ -18,39 +19,43 @@
           </ul>
         </nav>
     </header>  
+    
     <div class="container">
         <div class="Create-class">
             <h2>Create Account</h2>
-        <form class="create-account-form">
-            <div class="form-group">
-                <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" required>
-            </div>
-            <div class="form-group">
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="birthdate">Birthdate:</label>
-                <input type="date" id="birthdate" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password" required>
-            </div>
-            <button type="submit">Create Account</button>
-        </form>
-        <p>Already have an account? <a href="LogIn.html">Log in</a></p>
+            <form class="create-account-form">
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Birthdate:</label>
+                    <input type="date" id="birthdate" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <button type="submit">Create Account</button>
+            </form>
+            <p>Already have an account? <a href="LogIn.html">Log in</a></p>
+            <p id="message"></p> 
+        </div>
     </div>
-</div>
-    
+
+    <div id="error-messages" style="color: red;"></div> 
+    <script src="CreateAccount.js"></script>
 </body>
 </html>

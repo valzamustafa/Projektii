@@ -4,7 +4,6 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
-
 body {
     background: linear-gradient(
             rgba(0, 0, 0, 0.6),
@@ -13,8 +12,8 @@ body {
         url('images/backgroundLogIn.jpg') no-repeat center fixed;
     background-size: cover;
     color: white;
+    background-size: 100% 100%;
 }
-
 
 header {
     position: fixed;
@@ -27,7 +26,6 @@ header {
     margin-top: 80px;
     align-items: center;
 }
-
 
 .navbar ul {
     list-style: none;
@@ -47,7 +45,6 @@ header {
 .navbar ul li a:hover {
     color: #f0a500;
 }
-
 
 @media (max-width: 768px) {
     .navbar ul {
@@ -73,14 +70,12 @@ header {
     }
 }
 
-
 .menu-icon {
     display: none;
     color: white;
     font-size: 24px;
     cursor: pointer;
 }
-
 
 .container {
     background-color: rgba(0, 0, 0, 0.4);
@@ -102,7 +97,6 @@ header {
     margin-top: 40px; 
 }
 
-
 .form-group {
     display: block;
     margin-bottom: 15px;
@@ -112,7 +106,6 @@ header {
     display: block;
     margin-bottom: 5px;
 }
-
 
 .form-group input {
     width: 100%;
@@ -124,7 +117,6 @@ header {
     box-sizing: border-box;
 }
 
-
 button {
     width: 100%;
     padding: 10px;
@@ -134,4 +126,11 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
 }
