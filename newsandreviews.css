@@ -11,7 +11,7 @@ html, body {
     background: url('images/backround.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
-    padding: 0;
+    
     display: flex;
     flex-direction: column;
   }
@@ -211,6 +211,7 @@ header {
   
   /* Sidebar */
   .sidebar {
+    margin-top: 100px;
     background: rgba(255, 255, 255, 0.8); 
     padding: 20px;
     border-radius: 10px;
@@ -335,21 +336,12 @@ header {
   
 
 
-<<<<<<< HEAD
 .singlepost {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 120px 0px 0px;
   flex-grow: 1; 
-=======
-  .singlepost {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 120px 20px 20px; 
-    flex-grow: 1;
->>>>>>> 7f1bae0d7a0300f5ef87f73f6b272ead01ca4837
 }
 
 
@@ -357,13 +349,8 @@ header {
     display: flex;
     flex-direction: column;
     gap: 0px;
-<<<<<<< HEAD
     /* max-width: 1200px; */
     width: 100%;
-=======
-    width:100% ;
-   
->>>>>>> 7f1bae0d7a0300f5ef87f73f6b272ead01ca4837
 }
 
 .singlepost h2 {
