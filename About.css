@@ -104,13 +104,7 @@ header.scrolled {
     cursor: pointer;
 }
     
-  
-.menu-icon {
-    display: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
+
 .front {
     height: 60vh;
     display: flex;
