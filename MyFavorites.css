@@ -17,7 +17,7 @@ body {
     background: linear-gradient(
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
-    ), url('images/Background\ \(1\).jpg ') no-repeat center center fixed;
+    ), url('images/Foto front.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
     padding-top: 100px;
@@ -97,102 +97,95 @@ header.scrolled {
 }
     
   
-.menu-icon {
-    display: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
-.front {
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 5px; 
-
-}
-
-.front-text h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.container {
+ 
+.favorites-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     gap: 20px;
+    justify-content: center;
+    margin-top: 100px; 
+    padding: 20px;
+}
+
+.no-products {
+    font-size: 1.5rem;
+    color: #a02323;
+    text-align: center;
     margin-top: 50px;
 }
-
-.container p {
-    font-size: 16px;
-    color: lightgray;
-    line-height: 1.5;
-    padding: 10px;
-}
-
-.box {
-    width: 400px;
-    height: 300px;
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    color: rgb(125, 118, 118);
-    margin: 20px;
-    background: rgba(0, 0, 0, 0.5); 
-    border-radius: 8px; 
+.favorites-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
     padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
 }
 
-.box:hover {
-    background: rgba(0, 0, 0, 0.7); 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
-    transition: all 0.3s ease;
-}
-.owners-quotes {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 40px 0;
-    flex-wrap: wrap;
-}
-  
-.quote-box {
-    background-color: rgba(255, 255, 255, 0.566); 
-    padding: 30px;
+
+.favorite-product {
+    background-color: #1c1c1e; 
+    border: 1px solid #ddd;
     border-radius: 10px;
-    max-width: 500px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
+    padding: 15px;
+    max-width: 250px;
+    min-width: 200px;
     text-align: center;
-    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
-blockquote {
-    font-size: 18px;
-    font-style: italic;
-    color: #333;
-    margin-bottom: 20px;
+
+
+.favorite-product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-footer {
-    font-size: 16px;
+
+.favorite-product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+.favorite-product h3 {
+    font-size: 1.2rem;
+    color: white;
+    margin: 10px 0;
+}
+
+.favorite-product .price {
     font-weight: bold;
     color: #f0a500;
     margin-top: 10px;
 }
+
+.favorite-product .remove-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
 .footer {
     display: flex;
     justify-content: space-between;
     background: linear-gradient(135deg, #111, #333);
     color: white;
-    padding: 10px 20px; 
+    padding: 20px;
     flex-wrap: wrap;
-    gap: 10px; 
+    gap: 10px;
+    margin-top: auto; 
 }
+
 .footer-box {
     flex: 1;
     min-width: 180px;
@@ -209,6 +202,14 @@ footer {
     padding-bottom: 5px;
 }
 
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #444;
+    color: #dcdcdc;
+    font-size: 14px; 
+    background: #111;
+}
 .locations .location {
     margin-bottom: 10px;
 }
@@ -273,3 +274,7 @@ footer {
     font-size: 10px; 
     background: linear-gradient(135deg, #111, #333);
 }
+
+
+
+
