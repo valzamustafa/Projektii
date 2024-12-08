@@ -44,7 +44,7 @@ header.scrolled {
     height: 250px;
     width: auto;
     position: absolute;  
-    top: -180px;
+    top: -90px;
     
   left: 20px;  
 }
@@ -61,7 +61,7 @@ header.scrolled {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 40px;
+    gap: 50px;
 }
     
 .navbar ul li {

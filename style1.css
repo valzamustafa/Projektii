@@ -33,7 +33,7 @@ header.scrolled {
   position: sticky;
   position: fixed;
   padding: 0;
-  top: 0;
+  top: 10;
   left:0;
   width: 100%;
   gap:20px;

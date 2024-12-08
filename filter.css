@@ -234,24 +234,34 @@ header {
   }
   
   
-  
-    
-    /* Filter */
-    .filter {
+  .filter {
     margin: 20px 0;
     text-align: center;
-    }
-    
-    .filter label {
+}
+
+.filter label {
     font-size: 16px;
     font-weight: bold;
     margin-right: 10px;
-    }
-    
-    .filter select {
+}
+
+.filter select {
     padding: 5px;
     font-size: 14px;
-    }
+}
+
+.filter button {
+    padding: 6px 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.filter button:hover {
+    background-color: #0056b3;
+}
+
     
     /* Footer */
     .footer {

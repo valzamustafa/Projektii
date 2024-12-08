@@ -43,7 +43,7 @@ header.scrolled {
     height: 250px;
     width: auto;
     position: absolute;  
-    top: -180px;
+    top: -90px;
     
   left: 20px;  
 }
@@ -51,7 +51,7 @@ header.scrolled {
 .navbar {
     position: fixed; 
     top: 10px;  
-    left:550px;
+    left:500px;
     width: 100%;  
     background-color: transparent; 
 }

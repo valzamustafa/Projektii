@@ -44,14 +44,14 @@ header.scrolled {
     height: 250px;
     width: auto;
     position: absolute;  
-    top: -180px;
+    top: -90px;
     
   left: 20px;  
 }
 .navbar {
     position: fixed; 
     top: 10px; 
-    left:600px;
+    left:400px;
     width: 100%;  
     background-color: transparent; 
 }
@@ -60,7 +60,7 @@ header.scrolled {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 40px;
+    gap: 10px;
 }
     
 .navbar ul li {
@@ -71,7 +71,9 @@ header.scrolled {
     text-decoration: none;
     color: white;
     font-size: 18px;
+    font-family: 'Arial', sans-serif; 
     padding: 20px 30px;
+    gap:20px;
    
 }
     
