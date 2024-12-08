@@ -335,12 +335,21 @@ header {
   
 
 
+<<<<<<< HEAD
 .singlepost {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 120px 0px 0px;
   flex-grow: 1; 
+=======
+  .singlepost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 20px 20px; 
+    flex-grow: 1;
+>>>>>>> 7f1bae0d7a0300f5ef87f73f6b272ead01ca4837
 }
 
 
@@ -348,8 +357,13 @@ header {
     display: flex;
     flex-direction: column;
     gap: 0px;
+<<<<<<< HEAD
     /* max-width: 1200px; */
     width: 100%;
+=======
+    width:100% ;
+   
+>>>>>>> 7f1bae0d7a0300f5ef87f73f6b272ead01ca4837
 }
 
 .singlepost h2 {
@@ -358,6 +372,7 @@ header {
 }
 
 .singlepost_thumbnail {
+    
     display: flex;
     justify-content: center;
     align-items: center;
