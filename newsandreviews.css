@@ -3,17 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  
-  }
-  
-  body, html {
+}
+html, body {
     height: 100%;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4; 
     background: url('images/backround.jpg') no-repeat center center fixed;
     background-size: cover;
-    padding-top:50px;
-    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 
 body{
@@ -37,7 +37,7 @@ header {
     display: flex; 
     align-items: center;
     justify-content: space-between; 
-    z-index: 10;
+    z-index: 1000;
   }
   
   
@@ -64,7 +64,7 @@ header {
     justify-content: center; 
     align-items: center; 
     background-color: transparent;
-    z-index: 10; 
+    z-index: 1000; 
     padding: 10px 20px; 
   }
   .navbar ul {
@@ -216,7 +216,6 @@ header {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height:405px;
- 
   }
   
   .sidebar h3 {
@@ -237,7 +236,6 @@ header {
     color: #007BFF;
     transition: color 0.3s;
     font-size: 18px;
- 
   }
   
   .sidebar ul li a:hover {
@@ -337,20 +335,21 @@ header {
   
 
 
-  .singlepost {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 120px 20px 20px; 
-    width:100%;
+.singlepost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 0px 0px;
+  flex-grow: 1; 
 }
 
 
 .singlepost_container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-   
+    gap: 0px;
+    /* max-width: 1200px; */
+    width: 100%;
 }
 
 .singlepost h2 {
@@ -365,8 +364,7 @@ header {
 }
 
 .singlepost_thumbnail img {
-    
-    max-width:800px;
+    /* max-width: 8009; */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -386,12 +384,13 @@ header {
     justify-content: space-between;
     background: linear-gradient(135deg, #111, #333);
     color: white;
-    padding: 20px 50px; 
+    padding: 10px 20px; 
     flex-wrap: wrap;
-    gap: 10px;
-    min-height: 200px; /* Siguron që footer të ketë një lartësi minimale */
-    position: relative;
-    width:100%;
+    gap: 10px; 
+    
+    margin-top: auto;
+    width: 100%; 
+
     
 }
 .footer-box {
