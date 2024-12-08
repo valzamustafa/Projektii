@@ -109,7 +109,8 @@ header.scrolled {
 
 .no-products {
     font-size: 1.5rem;
-    color: #a02323;
+    color: red;
+    font-size: 60px;
     text-align: center;
     margin-top: 50px;
 }

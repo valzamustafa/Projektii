@@ -137,12 +137,13 @@ hr {
     color: rgb(226, 215, 215);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative; 
-    left: 35%;
+    left: 30%;
     transform: translate(-50%, -50%) skewX(-10deg);
     background-color: rgba(192, 158, 158, 0.5);
     padding-top: 20px;
     z-index: 5; 
     margin-top: 100px;
+    gap: 0px;
 }
 
 .contact-form {
@@ -152,7 +153,7 @@ hr {
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: rgb(226, 215, 215);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    left: 65%;
+    left: 45%;
     background-color: rgba(192, 158, 158, 0.5);
     padding-top: 20px;
     z-index: 5; 
@@ -160,6 +161,7 @@ hr {
 
 .Format {
     display: flex;
+    gap: 0px;
 }
 
 .contact-form input,
@@ -169,6 +171,18 @@ hr {
     color: rgb(226, 215, 215);
     padding: 10px;
     margin: 5px 0;
+}
+.contact-form button {
+    background-color: #f0a500; 
+    color: white;
+    padding: 20px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    height: 50px; 
 }
 
 
