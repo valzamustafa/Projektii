@@ -14,73 +14,66 @@
   }
   
 
-  /* Header */
-  header {
-    position: fixed; 
+/* Header */
+header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color:transparent;
+    background-color: transparent;
     color: white;
     padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    justify-content: center;
+    display: flex; 
     align-items: center;
+    justify-content: space-between; 
     z-index: 1000;
   }
   
-  .menu-icon {
-    display: none; 
-    font-size: 24px;
-    cursor: pointer;
+  
+  .logo {
+    display: flex;
+    align-items: center; 
   }
   
+  .logo img {
+    height: 250px; 
+    width: auto; 
+    margin-right: 500px; 
+    position: relative; 
+    top: -110px; 
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: transparent;
+    z-index: 1000; 
+    padding: 10px 20px; 
+  }
   .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+    list-style: none; 
+    display: flex; 
+    gap: 30px; 
+    margin: 0;
+    padding: 0;
   }
   
   .navbar ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    padding: 10px 20px;
-    transition: background 0.3s, color 0.3s;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
   }
   
   .navbar ul li a:hover {
-
-    color: #f0a500;
-  }
-  
-  /* Responsive Navbar */
-  @media (max-width: 768px) {
-    .menu-icon {
-      display: block;
-    }
-    
-    .navbar ul {
-      display: none;
-      flex-direction: column;
-      background-color:transparent;
-      position: absolute;
-      top: 50px;
-      right: 20px;
-      width: 200px;
-      border-radius: 5px;
-      padding: 10px 0;
-    }
-    
-    .navbar ul.active {
-      display: flex;
-    }
-    
-    .navbar ul li {
-      margin: 10px 0;
-      text-align: center;
-    }
+    color: #f0a500; 
   }
   
   /* Main Content */
