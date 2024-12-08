@@ -201,8 +201,8 @@ button {
 }
 
 .social .social-links img {
-    width: 50px;
-    height: 40px;
+    width: 30px; 
+    height: 30px;
     margin: 5px;
     border-radius: 50%;
     background: white;

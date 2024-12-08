@@ -20,3 +20,4 @@ document.querySelector(".change-password-form button").addEventListener("click",
         document.getElementById("message").style.color = "green";
     }
 });
+

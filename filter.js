@@ -24,3 +24,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+function addToFavorites(productName, price, imageSrc) {
+   
+    let favorites = localStorage.getItem('favorites');
+    favorites = favorites ? JSON.parse(favorites) : [];  
+
+   
+    const product = {
+        name: productName,
+        price: price,
+        image: imageSrc
+    };
+
+  
+    favorites.push(product);
+
+   
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    
+    alert(`${productName} has been added to your favorites!`);
+}
