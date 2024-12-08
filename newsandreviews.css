@@ -22,7 +22,7 @@ header {
     width: 100%;
     background-color: transparent;
     color: white;
-    padding: 20px 30px;
+    padding: 20px 0px;
     display: flex; 
     align-items: center;
     justify-content: space-between; 
