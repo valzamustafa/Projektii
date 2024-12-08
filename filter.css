@@ -117,14 +117,14 @@ header {
   
   .products {
     position: relative;
-    background-color: #1c1c1e; /* Dark gray for a sleek look */
-    color: #ffffff; /* White text for contrast */
-    border-radius: 10px; /* Smooth rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
-    overflow: hidden; /* Prevent overflow */
+    background-color: #1c1c1e; 
+    color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    overflow: hidden; 
     padding: 15px;
-    text-align: left; /* Align content to the left */
+    text-align: left; 
     
   }
   
@@ -140,21 +140,21 @@ header {
   }
   
   .products img {
-    width: auto; /* Automatically adjust width */
-    height: 200px; /* Uniform height for all images */
-    max-width: 100%; /* Ensure it doesn't overflow the container */
-    object-fit: contain; /* Prevent cropping; the whole image will be visible */
-    display: block; /* Center the image */
-    margin: 0 auto; /* Horizontally center */
-    border-radius: 8px; /* Optional: Rounded edges */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effects */
+    width: auto; 
+    height: 200px;
+    max-width: 100%;
+    object-fit: contain; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 8px; 
+    transition: transform 0.3s ease, filter 0.3s ease; 
   }
   
-  /* Teksti dhe çmimi */
+  
   .products .price {
-    font-size: 1rem; /* Highlighted price size */
+    font-size: 1rem; 
     font-weight: bold;
-    color: #737373; /* Gold color for emphasis */
+    color: #737373; 
     margin-bottom: 10px;
   }
   .products h2 {
@@ -163,59 +163,59 @@ header {
   }
   
   .products h2 {
-    font-size: 1.2rem; /* Larger and bold title */
+    font-size: 1.2rem; 
     font-weight: bold;
     margin-bottom: 10px;
-    color: #f5f5f5; /* Lighter white for contrast */
+    color: #f5f5f5;
   }
   
   /* Butoni Add to Favorite */
   .products  .button {
-    background: linear-gradient(135deg, #848282, #333333); /* Subtle gradient for a modern look */
-    color: #fff; /* White text for contrast */
-    border: none; /* Remove border */
-    padding: 12px 20px; /* Balanced padding for a comfortable size */
-    font-size: 1rem; /* Readable font size */
-    border-radius: 50px; /* Fully rounded button */
-    cursor: pointer; /* Pointer cursor for interactivity */
-    text-align: center; /* Center text */
-    text-decoration: none; /* Remove underline */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add depth with shadow */
-    transition: all 0.3s ease; /* Smooth transitions */
-    display: inline-block; /* Ensure proper button alignment */
+    background: linear-gradient(135deg, #848282, #333333); 
+    color: #fff; 
+    border: none; 
+    padding: 12px 20px; 
+    font-size: 1rem;
+    border-radius: 50px; 
+    cursor: pointer;
+    text-align: center; 
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; 
+    display: inline-block; 
   }
   /* Button Hover Effects */
   .products  .button:hover {
-    background: linear-gradient(135deg, #0056b3, #003e7e); /* Darker gradient on hover */
-    transform: translateY(-3px) scale(1.05); /* Lift and zoom effect */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+    background: linear-gradient(135deg, #0056b3, #003e7e); 
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); 
   }
   
   .products a button:focus,
   .products a button:active {
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Highlighted border for focus */
-    transform: scale(0.98); /* Subtle click feedback */
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); 
+    transform: scale(0.98);
   }
   
   .products:hover {
-    transform: translateY(-5px); /* Slight lift effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* More prominent shadow */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
   }
   .products:hover img {
-    transform: scale(1.05); /* Slight zoom on hover */
-    filter: brightness(1.1); /* Brighten image slightly */
+    transform: scale(1.05); 
+    filter: brightness(1.1); 
   }
   .products p {
-    font-size: 0.95rem; /* Smaller text for descriptions */
-    color: #b0b0b0; /* Lighter gray for secondary text */
+    font-size: 0.95rem; 
+    color: #b0b0b0;
     margin-bottom: 15px;
     line-height: 1.5;
   }
-  /* Badge/Category Styling */
+  
   .products .category {
     display: inline-block;
-    background-color: #444; /* Dark gray badge */
+    background-color: #444; 
     color: #fff;
     font-size: 0.75rem;
     padding: 5px 10px;
@@ -231,7 +231,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
-    color: #b0b0b0; /* Lighter gray */
+    color: #b0b0b0; 
     font-size: 0.85rem;
   }
   
