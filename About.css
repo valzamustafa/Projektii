@@ -57,7 +57,7 @@ header.scrolled {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 20px 30px;
    
 }
     
@@ -96,13 +96,7 @@ header.scrolled {
     cursor: pointer;
 }
     
-  
-.menu-icon {
-    display: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
+
 .front {
     height: 60vh;
     display: flex;

@@ -33,15 +33,21 @@ header {
     padding: 0;
     display: flex;
     gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
+.navbar ul li {
+    margin: 0;
+}
+    
 .navbar ul li a {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    transition: color 0.3s ease;
+    padding: 20px 30px;
+   
 }
-
 .navbar ul li a:hover {
     color: #f0a500;
 }
