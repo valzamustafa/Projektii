@@ -1,5 +1,5 @@
-/* General Reset */
-* {
+
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,6 +15,14 @@
     padding-top:50px;
     
   }
+
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  margin: 0;
+
+}
   
 
 /* Header */
@@ -337,6 +345,7 @@ header {
     width:100%;
 }
 
+
 .singlepost_container {
     display: flex;
     flex-direction: column;
@@ -390,7 +399,7 @@ header {
     min-width: 180px;
     max-width: 250px; 
     padding: 5px;
-    justify-content: space-between;
+    justify-content: space-between;;
 }
 
 .footer-box h2 {
@@ -464,5 +473,8 @@ header {
     color: #dcdcdc;
     font-size: 10px; 
     background: linear-gradient(135deg, #111, #333);
+
+    margin-top: auto;  
+    
 }
   
