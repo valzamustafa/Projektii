@@ -24,4 +24,12 @@ window.addEventListener("scroll", () => {
         header.classList.remove("transparent");
     }
 });
-
+function showSidebar() {
+    const sidebar = document.querySelector('.slidebar');
+    sidebar.style.display = 'flex'; 
+    }
+    
+    function hideSideBar() {
+    const sidebar = document.querySelector('.slidebar');
+    sidebar.style.display = 'none'; 
+    }

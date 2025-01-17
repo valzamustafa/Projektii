@@ -1,104 +1,124 @@
-header {
-    position: fixed;  
-    top: 0;
-    width: 100%;
-    z-index: 10;
-    background: transparent;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;  
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+  ), url('images/Foto\ front.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  padding-top: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+nav {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  height: 100%;
+  padding: 0px 60px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color:white;
+  font-size: 18px;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+.slidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex; 
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 12px;
+  margin-top: 4px;
+  
+}
+
+.slidebar li {
+  width: 100%;
+}
+
+.slidebar a {
+  width: 100%;
+  padding: 10px 30px;
+}
+@media (max-width: 1200px) {
+  
+ nav a {
+     height: 100%;
+     padding: 30px 40px;
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+     color: black;
+     font-size: 16px;
   }
+}
+@media (max-width: 1000px) {
   
+  nav a {
+      height: 100%;
+      padding: 30px 40px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: black;
+      font-size: 14px;
+   }
+}
+@media (max-width: 900px) {
+  nav a {
+      height: 100%;
+      padding: 30px 40px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: black;
+      font-size: 12px;
+   }
   
-  header.scrolled {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.8));
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 700px) {
+  nav ul {
+      justify-content: flex-start; 
   }
-  
-  
-  .logo img {
-    height: 250px;
-    width: auto;
-    margin-right: 0; 
-    position: relative;
-    top: -110px;  
+
+  .hideOnMobile {
+      display: none; 
   }
-  
-  /* Navbar Styles */
-  .navbar {
-    position: fixed;
-    display: flex;  
-    justify-content: center; 
-    align-items: center;
-    width: 100%;
-    background-color: transparent;
-    padding: 0;
-    top:10px;
-    
-    margin-right: 60px; 
+
+  .slidebar {
+      width: 250px;
   }
-  
-  
-  .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-bottom: 50px;
-  }
-  
-  .navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-family: 'Arial', sans-serif; 
-    padding: 10px 20px;
-  }
-  
-  .navbar ul li a:hover {
-    color: #f0a500;
-  }
-  
-  @media (max-width: 768px) {
-    .navbar ul {
-      display: none;
-      flex-direction: column;
-      background: rgba(0, 0, 0, 0.8);
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 200px;
-      padding: 10px;
-    }
-  
-  
-  
-    .navbar ul li {
-      margin-bottom: 10px;
-    }
-  }
-  
-  
-    body {
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-    ), url('images/Foto front.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    padding-top: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    }
-    
+}
   
   .Reklamat {
     display: grid;

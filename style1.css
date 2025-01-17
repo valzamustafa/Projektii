@@ -1,100 +1,125 @@
-
-body, html {
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  
 }
-
-
-header {
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-  background: transparent;
-  padding: 20px 30px;
+body {
+  height: 100vh;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  transition: background 0.3s ease;
-}
-
-header.scrolled {
-  background: rgba(0, 0, 0, 0.6); 
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-}
-.logo img {
-  height: 250px; 
-  width: auto; 
-  margin-right: -100px; 
-  position: relative; 
-  top: -110px; 
-}
-.navbar {
-  position: sticky;
-  position: fixed;
-  padding: 0;
-  top: 10;
-  left:0;
-  width: 100%;
-  gap:20px;
-  position: relative;
-  background-color:transparent;
-  margin-right: 140px;
-  
-
- 
-  }
-  
-  .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-   justify-content: center;
-    margin-bottom: 50px;
-  }
-  
-  
-  .navbar ul li {
-  margin: 0;
-  }
-  
-  .navbar ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  padding: 5px 10px;
-  gap: 10px;
-  margin: 5px;
- 
-  }
-  
-  .navbar ul li a:hover {
-  color: #f0a500;
-  }
-  
-  @media (max-width: 768px) {
-  .navbar ul {
-  display: none;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  top: 60px;
+  /* background: linear-gradient(
+  rgba(0, 0, 0, 0.3),
+  rgba(0, 0, 0, 0.3)
+  ), url('images/backgroundLogIn.jpg') no-repeat center center fixed; */
+  background-size: cover;
+  color: white;
+  padding-top: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+ 
+}
+
+nav {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  height: 100%;
+  padding: 0px 60px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color:white;
+  font-size: 18px;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+.slidebar {
+  position: fixed;
+  top: 0;
   right: 0;
-
-
-  gap:10px;
-  }
-
-    
-
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex; 
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 12px;
+  margin-top: 4px;
   
-  .navbar ul li {
-  margin-bottom: 10px;
-  }
-  }
+}
+
+.slidebar li {
+  width: 100%;
+}
+
+.slidebar a {
+  width: 100%;
+  padding: 10px 30px;
+}
+@media (max-width: 1200px) {
   
+ nav a {
+     height: 100%;
+     padding: 30px 40px;
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+     color: black;
+     font-size: 16px;
+  }
+}
+@media (max-width: 1000px) {
+  
+  nav a {
+      height: 100%;
+      padding: 30px 40px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: black;
+      font-size: 14px;
+   }
+}
+@media (max-width: 900px) {
+  nav a {
+      height: 100%;
+      padding: 30px 40px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: black;
+      font-size: 12px;
+   }
+  
+}
+@media (max-width: 700px) {
+  nav ul {
+      justify-content: flex-start; 
+  }
+
+  .hideOnMobile {
+      display: none; 
+  }
+
+  .slidebar {
+      width: 250px;
+  }
+}
 
 .front {
   height: 100vh;
@@ -109,7 +134,7 @@ header.scrolled {
     ),
     url('images/Foto%20front.png') no-repeat center center fixed;
   background-size: cover;
-  color: white;
+  /* color: white; */
   padding-top: 80px; 
 }
 

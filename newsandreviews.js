@@ -27,3 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Auto Slide
     setInterval(nextSlide, 5000);
 });
+function showSidebar() {
+    const sidebar = document.querySelector('.slidebar');
+    sidebar.style.display = 'flex'; 
+    }
+    
+    function hideSideBar() {
+    const sidebar = document.querySelector('.slidebar');
+    sidebar.style.display = 'none'; 
+    }
