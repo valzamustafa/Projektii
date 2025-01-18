@@ -35,51 +35,52 @@
             <li class="hideOnMobile"><a href="MyAccoutn.html">My Account</a></li>
             <li class="menubutton" onclick="showSidebar()">
                 <a href="#">
-                    <img src="images/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Menu" height="24" width="24">
+                    <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
                 </a>
             </li>
         </ul>  
     </nav>
-    
-    <div class="Tittle">
-        <h1>Contact Us</h1>
-    </div>
-
-    <hr class="page-line">
-    <div class="Format">
-        <div class="ContacInfo">
-            <h3>Location</h3>
-            <p>Magjistralja Prishtine-Ferizaj Kolegji Fama</p>
-
-            <h3>Phone</h3>
-            <p>044 111 000</p>
-
-            <h3>Email</h3>
-            <p>autosallonmaidonn@gmail.com</p>
-
-            <h3>Open Hours</h3>
-            <p>Mon - Sat: 9:00 AM - 5:00 PM</p>
-        </div>
-
-        <div class="contact-form">
-            <h2>Send Us a Message</h2>
-            <form onsubmit="return validateForm()">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required><br>
-
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required><br>
-
-                <label for="phone">Your Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required pattern="^\+?[0-9]{1,4}?[0-9]{7,10}$"><br>
-
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea><br>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </div>
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="container-wrapper">
+                <div class="contactform">
+                    <h3>Send us a message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email"name="name" placeholder="Your email">
+                        </div>
+                        <div class="form-group">
+                           <textarea name="message" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Our Information</h3>
+                    <div class="info-item">
+                        <img src="images/location.png" alt="Location" height="24" width="24">
+                        <p>Prishtine-Ferizaj Kolegji Fama</p>
+                    </div>
+                    <div class="info-item">
+                        <img src="images/phoneicon.png" alt="Phone" height="24" width="24">
+                        <p>044 111 000</p>
+                    </div>
+                    <div class="info-item">
+                        <img src="images/mailicon.png" alt="Email" height="24" width="24">
+                        <p>autosallonmaidonn@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <img src="images/time.png" alt="Working hours" height="24" width="24">
+                        <p>Mon - Sat: 9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </section>
     <div class="footer">
         <div class="footer-box locations">
             <h2>Our Locations</h2>
