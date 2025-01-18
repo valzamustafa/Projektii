@@ -184,15 +184,19 @@ nav li:first-child {
     border: none;
     cursor: pointer;
 }
-.footer {
+   /* Footer */
+   .footer {
     display: flex;
-    justify-content: space-between;
-    background: linear-gradient(135deg, #111, #333);
+    justify-content: space-between; 
+    align-items: center; 
+    background: linear-gradient(135deg, #111, #333); 
     color: white;
-    padding: 10px 20px; 
-    flex-wrap: wrap;
-    gap: 10px; 
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
+
 .footer-box {
     flex: 1;
     min-width: 180px;
@@ -237,8 +241,8 @@ nav li:first-child {
 }
 
 .social .social-links img {
-    width: 50px;
-    height: 40px;
+    width: 50px; 
+    height: 50px;
     margin: 5px;
     border-radius: 50%;
     background: white;
@@ -258,7 +262,7 @@ nav li:first-child {
 .navigation a {
     color: white;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .navigation a:hover {
@@ -273,4 +277,4 @@ nav li:first-child {
     font-size: 10px; 
     background: linear-gradient(135deg, #111, #333);
 }
-
+  
