@@ -1,97 +1,146 @@
 <?php
+// Përdorni lidhjen me bazën e të dhënave
+include('db_connection.php'); 
 
-class Page {
-    private string $title;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Merrni të dhënat nga formulari
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
 
-    public function __construct(string $title) {
-        $this->title = $title;
-    }
+    // Kontrolloni nëse të dhënat janë të plota
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        // Ruaj mesazhin në bazën e të dhënave
+        $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $name, $email, $message);
 
-    public function render(callable $navbar, callable $content, callable $footer): void {
-        echo "<!DOCTYPE html>";
-        echo "<html lang='en'>";
-        echo "<head>";
-        echo "<meta charset='UTF-8'>";
-        echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
-        echo "<title>{$this->title}</title>";
-        echo "<link rel='stylesheet' href='ContactUs.css'>";
-        echo "</head>";
-        echo "<body>";
-        $navbar();
-        $content();
-        $footer();
-        echo "</body></html>";
-    }
-}
-
-class Navbar {
-    private array $links;
-
-    public function __construct(array $links) {
-        $this->links = $links;
-    }
-
-    public function render(): void {
-        echo "<nav><ul class='navbar'>";
-        foreach ($this->links as $link => $url) {
-            echo "<li><a href='{$url}'>{$link}</a></li>";
+        if ($stmt->execute()) {
+            $success_message = "Mesazhi juaj u dërgua me sukses!";
+        } else {
+            $error_message = "Kishte një problem gjatë dërgimit të mesazhit.";
         }
-        echo "</ul></nav>";
+        $stmt->close();
+    } else {
+        $error_message = "Ju lutemi plotësoni të gjitha fushat e formularit.";
     }
 }
-
-
-class Footer {
-    private string $location;
-    private string $address;
-
-    public function __construct(string $location, string $address) {
-        $this->location = $location;
-        $this->address = $address;
-    }
-
-    public function render(): void {
-        echo "<div class='footer'>";
-        echo "<h2>Our Locations</h2>";
-        echo "<p>{$this->location} - {$this->address}</p>";
-        echo "</div>";
-    }
-}
-
-
-$navbar = new Navbar([
-    'Home' => 'home.html',
-    'About Us' => 'AboutUs.html',
-    'Contact Us' => 'ContactUs.php',
-]);
-
-$footer = new Footer("Prishtine", "Magjistralja Prishtine-Ferizaj");
-
-
-$content = function () {
-    echo "<section class='contact'>";
-    echo "<div class='container'>";
-    echo "<h2>Contact Us</h2>";
-    echo "<form method='post'>";
-    echo "<div class='form-group'><input type='text' name='name' placeholder='Your Name' required></div>";
-    echo "<div class='form-group'><input type='email' name='email' placeholder='Your Email' required></div>";
-    echo "<div class='form-group'><textarea name='message' placeholder='Your Message' required></textarea></div>";
-    echo "<button type='submit'>Send Message</button>";
-    echo "</form>";
-    echo "</div>";
-    echo "</section>";
-
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = htmlspecialchars($_POST['name']);
-        $email = htmlspecialchars($_POST['email']);
-        $message = htmlspecialchars($_POST['message']);
-        
-      
-        echo "<p>Thank you, {$name}! Your message has been sent.</p>";
-    }
-};
-
-$page = new Page("Contact Us");
-$page->render([$navbar, 'render'], $content, [$footer, 'render']);
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="ContactUs.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="#">Maidon</a></li>
+            <li class="hideOnMobile"><a href="home.php">Home</a></li>
+            <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+            <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+            <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+            <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+            <li class="menubutton" onclick="showSidebar()">
+                <a href="#">
+                    <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+                </a>
+            </li>
+        </ul>  
+    </nav>
+
+    <!-- Contact Us Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="container-wrapper">
+                <div class="contactform">
+                    <h3>Send us a message</h3>
+                    <form method="POST" action="">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit">Send Message</button>
+                    </form>
+
+                    <!-- Display success or error message -->
+                    <?php if (isset($success_message)) { ?>
+                        <div class="success-message">
+                            <?php echo $success_message; ?>
+                        </div>
+                    <?php } ?>
+                    <?php if (isset($error_message)) { ?>
+                        <div class="error-message">
+                            <?php echo $error_message; ?>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="contact-info">
+                    <h3>Our Information</h3>
+                    <div class="info-item">
+                        <img src="images/location.png" alt="Location" height="24" width="24">
+                        <p>Prishtine-Ferizaj Kolegji Fama</p>
+                    </div>
+                    <div class="info-item">
+                        <img src="images/phoneicon.png" alt="Phone" height="24" width="24">
+                        <p>044 111 000</p>
+                    </div>
+                    <div class="info-item">
+                        <img src="images/mailicon.png" alt="Email" height="24" width="24">
+                        <p>autosallonmaidonn@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <img src="images/time.png" alt="Working hours" height="24" width="24">
+                        <p>Mon - Sat: 9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-box locations">
+            <h2>Our Locations</h2>
+            <div class="location">
+                <h4>Prishtine</h4>
+                <p>Magjistralja Prishtine-Ferizaj</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=..."></iframe>
+            </div>
+        </div>
+
+        <div class="footer-box social">
+            <h2>Join the Maidonn Social Community</h2>
+            <div class="social-links">
+                <a href="https://m.facebook.com/100070756819509/"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/autosallonimaidonn"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@autosallonmaidonn5"><img src="images/tiktok.png" alt="TikTok"></a>
+            </div>
+        </div>
+
+        <div class="footer-box navigation">
+            <h2>Quick Links</h2>
+            <p><a href="AboutUs.php">About Us</a></p>
+            <p><a href="ContactUs.php">Contact</a></p>
+            <p><a href="#">Privacy Policy</a></p>
+            <p><a href="#">Terms of Service</a></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2024 Maidonn. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
