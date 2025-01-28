@@ -4,28 +4,28 @@ require_once 'db_connection.php';
 require_once 'User.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Merr të dhënat nga formulari
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Krijo një objekt Database për lidhjen me DB
+
     $db = new Database();
     $connection = $db->getConnection();
 
-    // Krijo një objekt User dhe provoni të kyçesh
+  
     $user = new User($connection);
 
-    // Përpiqu të kyçesh
+
     if ($user->login($email, $password)) {
-        // Nëse është e suksesshme, drejto në faqen përkatëse
+     
         if ($_SESSION['role'] === 'admin') {
-            header("Location: dashboard.php"); // Drejto tek dashboard për admin
+            header("Location: dashboard.php"); 
         } else {
-            header("Location: home.php"); // Drejto tek faqja kryesore për përdorues të tjerë
+            header("Location: home.php"); 
         }
-        exit; // Ndalo ekzekutimin e mëtejshëm
+        exit; 
     } else {
-        // Shfaq mesazhin e gabimit nëse kyçja ka dështuar
+      
         $error_message = "Invalid login credentials!";
     }
 }

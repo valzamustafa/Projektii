@@ -118,7 +118,7 @@ class Page {
     }
 }
 
-=
+
 $page = new Page();
 $page->render();
 

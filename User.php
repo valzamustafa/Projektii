@@ -1,7 +1,7 @@
 <?php
 class User {
     private $conn;
-    private $table_name = 'manage_users'; // Ensure this matches your table name
+    private $table_name = 'manage_users'; 
 
     public function __construct($db) {
         $this->conn = $db;
@@ -12,10 +12,8 @@ class User {
 
         $stmt = $this->conn->prepare($query);
 
-        // Hash the password before binding
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Bind parameters
         $stmt->bind_param('ssss', $first_name, $last_name, $email, $hashed_password);
 
         if ($stmt->execute()) {
@@ -28,29 +26,29 @@ class User {
         $query = "SELECT first_name, last_name, email, password, role FROM {$this->table_name} WHERE email = ?";
     
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('s', $email); // Përdorim 's' për string
+        $stmt->bind_param('s', $email); 
     
         $stmt->execute();
         $result = $stmt->get_result();
     
-        // Kontrollo nëse ekziston një rekord
+        
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password'])) {
-                // Filloni sesionin dhe ruani të dhënat e përdoruesit
+              
                 session_start();
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['role'] = $row['role'];
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['last_name'] = $row['last_name'];
     
-                // Verifikoni email dhe dërgoni në faqen përkatëse
+              
                 if (strpos($email, '@admin.com') !== false) {
                     // Përdoruesi është administrator
                     header("Location: dashboard.php");
                     exit;
                 } else if (strpos($email, '@gmail.com') !== false) {
-                    // Përdoruesi është një përdorues i zakonshëm
+                  
                     header("Location: home.php");
                     exit;
                 }

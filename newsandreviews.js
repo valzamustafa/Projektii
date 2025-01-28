@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.slide');
-    const prevButton = document.querySelector('.prev'); // Select one prev button
-    const nextButton = document.querySelector('.next'); // Select one next button
+    const prevButton = document.querySelector('.prev'); 
+    const nextButton = document.querySelector('.next'); 
     let currentIndex = 0;
 
     function showSlide(index) {
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
         showSlide(currentIndex);
     }
 
-    // Add Event Listeners
+    
     nextButton.addEventListener('click', nextSlide);
     prevButton.addEventListener('click', prevSlide);
 
-    // Auto Slide
+    
     setInterval(nextSlide, 5000);
 });
 function showSidebar() {

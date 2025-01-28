@@ -1,6 +1,4 @@
 <?php
-// Klasat për çdo element të faqes
-
 class Navigation {
     public function render() {
         echo '

@@ -127,8 +127,12 @@ nav li:first-child {
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 180px; 
+    height: 100vh;
 }
 
 .container h2 {
@@ -141,16 +145,18 @@ nav li:first-child {
 .container-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: 0px;
 }
 
 .contactform,
 .contact-info {
-    padding: 20px;
-    border-radius: 18px;
-    background-color: rgba(81, 77, 77, 0.5);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    color: white;
+    margin-top: 30px; 
 
 }
 
@@ -164,7 +170,12 @@ nav li:first-child {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    color: white;
     box-sizing: border-box;
     
 
@@ -192,7 +203,7 @@ textarea:focus {
 button {
     display: inline-block;
     padding: 12px 24px;
-    background: linear-gradient(45deg, #007bff, #0056b3);
+    background-color: #f0a500;
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -225,7 +236,7 @@ button:active {
 
 .contact-info .info-item i {
     font-size: 20px;
-    color: #007bff;
+    background-color: #f0a500;
     margin-right: 10px;
 }
 

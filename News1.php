@@ -1,5 +1,4 @@
 <?php
-
 class Navigation {
     private $links = [
         'home' => 'home.html',
@@ -24,7 +23,6 @@ class Navigation {
         echo '</nav>';
     }
 }
-
 class Sidebar {
     private $links = [
         'home' => 'home.html',

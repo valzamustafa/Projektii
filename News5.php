@@ -1,6 +1,4 @@
 <?php
-
-
 class Header {
     public function render() {
         echo '<!DOCTYPE html>';
@@ -14,7 +12,6 @@ class Header {
         echo '<body>';
     }
 }
-
 class Navigation {
     public function render() {
         echo '<nav>';
@@ -113,8 +110,6 @@ class Page {
         echo '</body></html>';
     }
 }
-
-=
 $page = new Page();
 $page->render();
 

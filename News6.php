@@ -1,6 +1,4 @@
 <?php
-
-
 class Header {
     public function render() {
         echo '<!DOCTYPE html>';
@@ -14,7 +12,6 @@ class Header {
         echo '<body>';
     }
 }
-
 class Navigation {
     public function render() {
         echo '<nav>';
@@ -44,7 +41,6 @@ class Navigation {
     }
 }
 
-
 class Content {
     public function render() {
         echo '  <section class="singlepost">';
@@ -57,8 +53,6 @@ class Content {
         
     }
 }
-
-
 class Footer {
     public function render() {
         echo '<div class="footer">';
@@ -86,8 +80,6 @@ class Footer {
         echo '<div class="footer-bottom"><p>© 2024 Maidonn. All rights reserved.</p></div>';
     }
 }
-
-
 class Page {
     private $header;
     private $navigation;
@@ -100,7 +92,6 @@ class Page {
         $this->content = new Content();
         $this->footer = new Footer();
     }
-
     public function render() {
         $this->header->render();
         $this->navigation->render();
@@ -110,8 +101,6 @@ class Page {
         echo '</body></html>';
     }
 }
-
-=
 $page = new Page();
 $page->render();
 
