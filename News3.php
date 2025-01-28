@@ -1,14 +1,14 @@
 <?php
 class Navigation {
     private $links = [
-        'home' => 'home.html',
-        'about' => 'AboutUs.html',
-        'contact' => 'ContactUs.html',
-        'news' => 'newsandreviews.html',
-        'account' => 'MyAccoutn.html',
-        'signup' => 'Register.html',
-        'login' => 'LogIn.html',
-        'favorites' => 'MyFavorites.html',
+        'home' => 'home.php',
+        'about' => 'AboutUs.php',
+        'contact' => 'ContactUs.php',
+        'news' => 'newsandreviews.php',
+        'account' => 'MyAccoutn.php',
+        'signup' => 'Register.php',
+        'login' => 'LogIn.php',
+        'favorites' => 'MyFavorites.php',
     ];
 
     public function render() {
@@ -27,14 +27,14 @@ class Navigation {
 }
 class Sidebar {
     private $links = [
-        'home' => 'home.html',
-        'about' => 'AboutUs.html',
-        'contact' => 'ContactUs.html',
-        'news' => 'newsandreviews.html',
-        'account' => 'MyAccoutn.html',
-        'signup' => 'Register.html',
-        'login' => 'LogIn.html',
-        'favorites' => 'MyFavorites.html',
+        'home' => 'home.php',
+        'about' => 'AboutUs.php',
+        'contact' => 'ContactUs.php',
+        'news' => 'newsandreviews.php',
+        'account' => 'MyAccoutn.php',
+        'signup' => 'Register.php',
+        'login' => 'LogIn.php',
+        'favorites' => 'MyFavorites.php',
     ];
 
     public function render() {
@@ -79,8 +79,8 @@ class Footer {
 
         echo '<div class="footer-box navigation">';
         echo '<h2>Quick Links</h2>';
-        echo '<p><a href="AboutUs.html">About Us</a></p>';
-        echo '<p><a href="ContactUs.html">Contact</a></p>';
+        echo '<p><a href="AboutUs.php">About Us</a></p>';
+        echo '<p><a href="ContactUs.php">Contact</a></p>';
         echo '<p><a href="#">Privacy Policy</a></p>';
         echo '<p><a href="#">Terms of Service</a></p>';
         echo '</div>';

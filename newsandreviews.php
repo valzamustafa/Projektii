@@ -99,7 +99,7 @@ class Page {
         echo "    <meta charset='UTF-8'>\n";
         echo "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
         echo "    <title>Maidonn</title>\n";
-        echo "    <link rel='stylesheet' href='style.css'>\n";
+        echo "    <link rel='stylesheet' href='newsandrevies.css'>\n";
 
       
         echo "    <script>\n";
@@ -160,11 +160,11 @@ class Page {
 $header = new Header("Maidonn - News and Reviews");
 
 $navbarLinks = [
-    "Home" => "home.html",
-    "About Us" => "AboutUs.html",
-    "Contact Us" => "ContactUs.html",
-    "News and Reviews" => "newsandreviews.html",
-    "My Account" => "MyAccount.html",
+    "Home" => "home.php",
+    "About Us" => "AboutUs.php",
+    "Contact Us" => "ContactUs.php",
+    "News and Reviews" => "newsandreviews.php",
+    "My Account" => "MyAccount.php",
 ];
 $navbar = new Navbar($navbarLinks);
 
@@ -192,8 +192,8 @@ $newsSection = new NewsSection("Latest News", $newsArticles);
 
 $footerSections = [
     "Quick Links" => [
-        "About Us" => "AboutUs.html",
-        "Contact" => "ContactUs.html",
+        "About Us" => "AboutUs.php",
+        "Contact" => "ContactUs.php",
         "Privacy Policy" => "#",
         "Terms of Service" => "#",
     ],
