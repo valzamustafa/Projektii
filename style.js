@@ -33,3 +33,5 @@ function showSidebar() {
     const sidebar = document.querySelector('.slidebar');
     sidebar.style.display = 'none'; 
     }
+
+
