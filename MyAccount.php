@@ -50,7 +50,6 @@ if (!isset($_SESSION['email'])) {
             <ul>
                 <li>Account Information</li>
                 <li><a href="MyFavorites.php">My Favorites</a></li>
-                <li><a href="ForgetPassword.php">Change Password</a></li>
                 <li><a href="Register.php">Create Account</a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>

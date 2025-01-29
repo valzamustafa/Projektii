@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li><a href="AboutUs.php">About Us</a></li>
             <li><a href="ContactUs.php">Contact Us</a></li>
             <li><a href="newsandreviews.php">News and Reviews</a></li>
-            <li><a href="MyAccoutn.php">My Account</a></li>
+            <li><a href="MyAccount.php">My Account</a></li>
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
