@@ -26,7 +26,7 @@ class Navigation {
         echo '<li><a href="AboutUs.php">About Us</a></li>';
         echo '<li><a href="ContactUs.php">Contact Us</a></li>';
         echo '<li><a href="newsandreviews.php">News and Reviews</a></li>';
-        echo '<li><a href="MyAccoutn.php">My Account</a></li>';
+        echo '<li><a href="MyAccount.php">My Account</a></li>';
         echo '<li><a href="Register.php">Sign Up</a></li>';
         echo '<li><a href="LogIn.php">Log In</a></li>';
         echo '<li><a href="MyFavorites.php">My Favorites</a></li>';
@@ -37,7 +37,7 @@ class Navigation {
         echo '<li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>';
         echo '<li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>';
         echo '<li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>';
-        echo '<li class="hideOnMobile"><a href="MyAccoutn.php">My Account</a></li>';
+        echo '<li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>';
         echo '<li class="menubutton" onclick="showSidebar()"><a href="#"><img src="images/menuwhite.png" alt="Menu" height="24" width="24"></a></li>';
         echo '</ul>';
         echo '</nav>';
