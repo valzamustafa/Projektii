@@ -43,7 +43,7 @@ class News {
             </ul>
         </nav>';
 
-        // Main content of About Us
+    
         echo '
         <main class="main-container">
     <!-- Featured News Slider -->
@@ -54,7 +54,7 @@ class News {
           <img src="images/foto kryesore te news.webp" alt="Featured Car 1">
           <div class="article-details">
             <span class="category"> CARS</span>
-            <h1><a href="news1.html
+            <h1><a href="news1.php
               ">Nine electric estates available now or in the near future</a></h1>
             <p>Because everyone knows an estate is infinitely cooler than an SUV</p>
           </div>
@@ -63,7 +63,7 @@ class News {
           <img src="images/lamborghini-temerario_100951093.jpg"Featured Car 2">
           <div class="article-details">
             <span class="category">Lamborghini</span>
-            <h1><a href="news2.html">Lamborghini Temerario with over 1,000 hp probably in the pipeline</a></h1>
+            <h1><a href="news2.php">Lamborghini Temerario with over 1,000 hp probably in the pipeline</a></h1>
             <p>The Lamborghini Temerario already spits out 907 hp but more power is likely for future variants of the car.</p>
           </div>
         </div>
@@ -71,7 +71,7 @@ class News {
           <img src="images/alfa-romeo-33-stradale_100950484.jpg" alt="Modern Alfa Romeo">
           <div class="article-details">
             <span class="category">Super Cars</span>
-            <h1><a href="news3.html">Modern Alfa Romeo 33 Stradale hits 207 mph at Nardò</a></h1>
+            <h1><a href="news3.php">Modern Alfa Romeo 33 Stradale hits 207 mph at Nardò</a></h1>
             <p>Alfa Romeos modern 33 Stradale is just weeks out from starting customer deliveries.</p>
           </div>
         </div>
@@ -84,11 +84,11 @@ class News {
     <aside class="sidebar">
         <h3>Popular News</h3>
         <ul>
-            <li><a href="news4.html">Subaru Tops Consumer Reports Annual Auto Reliability Survey</a></li>
-            <li><a href="news5.html">2025 Mazda MX-5 Miata: Pure Driving Joy Priced From $30,515, 35th Anniversary Edition Inbound</a></li>
-          <li><a href="news6.html">317,000-Plus Ram HD Trucks Recalled for Potential Loss of Antilock Brakes</a></li>
-          <li><a href="news7.html">Plug & Charge Tech Is Coming to Public EV Chargers to Free Us From Apps and Cards</a></li>
-          <li><a href="news8.html">What’s New for the 2025 Jeep Wagoneer?</a></li>
+            <li><a href="news4.php">Subaru Tops Consumer Reports Annual Auto Reliability Survey</a></li>
+            <li><a href="news5.php">2025 Mazda MX-5 Miata: Pure Driving Joy Priced From $30,515, 35th Anniversary Edition Inbound</a></li>
+          <li><a href="news6.php">317,000-Plus Ram HD Trucks Recalled for Potential Loss of Antilock Brakes</a></li>
+          <li><a href="news7.php">Plug & Charge Tech Is Coming to Public EV Chargers to Free Us From Apps and Cards</a></li>
+          <li><a href="news8.php">What’s New for the 2025 Jeep Wagoneer?</a></li>
         </ul>
       </aside>
       
