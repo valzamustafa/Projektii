@@ -38,6 +38,7 @@ if (!isset($_SESSION['email'])) {
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
             
             <!-- Show Dashboard link only for admins -->
             <?php if (isset($_SESSION['email']) && strpos($_SESSION['email'], '@admin.com') !== false): ?>
@@ -74,9 +75,10 @@ if (!isset($_SESSION['email'])) {
                 <li><a href="MyFavorites.php">My Favorites</a></li>
                 <li><a href="Register.php">Create Account</a></li>
                 <li><a href="logout.php">Log Out</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <!-- Dashboard link will show for admins only -->
                 <?php if (isset($_SESSION['email']) && strpos($_SESSION['email'], '@admin.com') !== false): ?>
-                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="MyAccount-admin.php">Dashboard</a></li>
                 <?php endif; ?>
             </ul>
         </div>
