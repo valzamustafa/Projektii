@@ -137,8 +137,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="footer-bottom">
         <p>© 2024 Maidonn. All rights reserved.</p>
     </div>
+<script>
+	 function showSidebar() {
+const sidebar = document.querySelector('.slidebar');
+sidebar.style.display = 'flex'; 
+}
 
-    <script src="LogIn.js"></script>
+function hideSideBar() {
+const sidebar = document.querySelector('.slidebar');
+sidebar.style.display = 'none'; 
+}
+</script>
+    
 
 </body>
 </html>

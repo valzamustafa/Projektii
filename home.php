@@ -1,5 +1,5 @@
 <?php
-// Car class definition
+
 class Car {
     private string $name;
     private string $year;
@@ -35,7 +35,7 @@ class Car {
     }
 }
 
-// Get all cars using the static method
+
 $cars = Car::getAllCars();
 ?>
 
@@ -147,5 +147,6 @@ $cars = Car::getAllCars();
     <div class="footer-bottom">
         <p>© 2024 Maidonn. All rights reserved.</p>
     </div>
+    <script src="style.js"></script>
 </body>
 </html>

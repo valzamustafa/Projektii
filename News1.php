@@ -29,7 +29,7 @@ class Sidebar {
         'about' => 'AboutUs.php',
         'contact' => 'ContactUs.php',
         'news' => 'newsandreviews.php',
-        'account' => 'MyAccoutn.php',
+        'account' => 'MyAccount.php',
         'signup' => 'Register.php',
         'login' => 'LogIn.php',
         'favorites' => 'MyFavorites.php',

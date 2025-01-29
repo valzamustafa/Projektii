@@ -157,7 +157,9 @@ class News {
         </footer>
         <div class="footer-bottom">
             <p>© 2024 Maidonn. All rights reserved.</p>
-        </div>';
+        </div>
+        <script src="newsandreviews.js"></script>
+        ';
     }
 }
 
