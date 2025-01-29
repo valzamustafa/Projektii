@@ -121,46 +121,6 @@ class News {
       </section>
   
 
-    <section class="reviews">
-      <h2>User Reviews</h2>
-      <div class="review">
-          <h3>Audi A5</h3>
-          <p>The A5 offers a relaxed yet capable driving experience, with a range of petrol and diesel engines. While not the most exciting, it's well-suited for those prioritizing comfort and efficiency, especially with options like the 2.0 TFSI. It's a solid family car with good economy, especially for a luxury seda</p>
-          <div class="rating">
-              <span class="star">⭐⭐⭐⭐⭐</span>
-          </div>
-      </div>
-      <div class="review">
-          <h3>Audi A8</h3>
-          <p>Known for its refined luxury, the A8 excels in both comfort and technology. It’s a spacious sedan, ideal for those seeking top-tier luxury and advanced features, including a choice of hybrid powertrains​
-        </p>
-          <div class="rating">
-              <span class="star">⭐⭐⭐⭐</span>
-          </div>
-      </div>
-
-      <div class="review">
-        <h3>BMW X5 M Sport</h3>
-        <p>A high-performance SUV, the X5 M Sport blends power with luxury, offering a dynamic driving experience. With strong engine options, advanced features, and a spacious interior, its great for those who want a sporty SUV that doesn’t sacrifice comfort​</p>
-        <div class="rating">
-            <span class="star">⭐⭐⭐⭐⭐</span>
-        </div>
-    </div>
-    <div class="review">
-        <h3>VW Touareg</h3>
-        <p>This SUV offers a balance of luxury and practicality. It stands out with its stylish design, premium interior, and powerful engines. It’s a solid choice for those seeking a refined, capable off-roade</p>
-        <div class="rating">
-            <span class="star">⭐⭐⭐⭐⭐</span>
-        </div>
-    </div>
-    <div class="review">
-        <h3>BMW 320d</h3>
-        <p>A favorite for those looking for a blend of sportiness and efficiency. The 320d’s diesel engine provides a solid performance while maintaining great fuel economy, making it a practical yet fun option</p>
-        <div class="rating">
-            <span class="star">⭐⭐⭐⭐⭐</span>
-        </div>
-    </div>
-    </section>
   </main>';
 
         // Render Footer
