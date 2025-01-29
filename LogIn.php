@@ -138,11 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p>© 2024 Maidonn. All rights reserved.</p>
     </div>
 <script>
-<<<<<<< HEAD
      function showSidebar() {
-=======
-	 function showSidebar() {
->>>>>>> cb5b85869774ee38feb5b1c242f841629c1b17bd
 const sidebar = document.querySelector('.slidebar');
 sidebar.style.display = 'flex'; 
 }
