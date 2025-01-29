@@ -121,6 +121,7 @@ class News {
       </section>
   
 
+   
   </main>';
 
         // Render Footer
