@@ -1,11 +1,17 @@
 <?php
-require_once 'db_connection.php'; 
-session_start();
+include('db_connection.php');
+include('ContactMessage.php');
 
-if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === false) {
-    header("Location: MyAccount.php"); 
-    exit;
-}
+// Create a new instance of the Database class
+$database = new Database();
+$conn = $database->getConnection();
+
+// Create a new instance of the ContactMessage class
+$contactMessage = new ContactMessage($conn);
+
+// Get the contact messages from the database
+$result = $contactMessage->getMessages();
+
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +19,7 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Manage Contact Messages</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -50,10 +56,24 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
             <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
         </ul>
     </div>
-    <div class="content">
-        <h1>Mirësevini në Dashboard</h1>
-        <p>Këtu mund të menaxhoni përdoruesit, makinat, lajmet dhe mesazhet.</p>
-    </div>
-    <script src="dashboard.js"></script>
+    <h2>Contact Messages</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+        <?php while ($row = $result->fetch_assoc()) { ?>
+        <tr>
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo htmlspecialchars($row['name']); ?></td>
+            <td><?php echo htmlspecialchars($row['email']); ?></td>
+            <td><?php echo nl2br(htmlspecialchars($row['message'])); ?></td>
+            <td><?php echo $row['created_at']; ?></td>
+        </tr>
+        <?php } ?>
+    </table>
 </body>
 </html>
