@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php endif; ?>
 
                 <button type="submit">Log In</button>
-                <p>Don't have an account? <a href="Register.html">Register</a></p>
+                <p>Don't have an account? <a href="Register.php">Register</a></p>
             </form>
         </div>
     </div>
