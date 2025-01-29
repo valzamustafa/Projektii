@@ -84,11 +84,11 @@ class News {
     <aside class="sidebar">
         <h3>Popular News</h3>
         <ul>
-            <li><a href="news4.php">Subaru Tops Consumer Reports Annual Auto Reliability Survey</a></li>
-            <li><a href="news5.php">2025 Mazda MX-5 Miata: Pure Driving Joy Priced From $30,515, 35th Anniversary Edition Inbound</a></li>
-          <li><a href="news6.php">317,000-Plus Ram HD Trucks Recalled for Potential Loss of Antilock Brakes</a></li>
-          <li><a href="news7.php">Plug & Charge Tech Is Coming to Public EV Chargers to Free Us From Apps and Cards</a></li>
-          <li><a href="news8.php">What’s New for the 2025 Jeep Wagoneer?</a></li>
+            <li><a href="News4.php">Subaru Tops Consumer Reports Annual Auto Reliability Survey</a></li>
+            <li><a href="News5.php">2025 Mazda MX-5 Miata: Pure Driving Joy Priced From $30,515, 35th Anniversary Edition Inbound</a></li>
+          <li><a href="News6.php">317,000-Plus Ram HD Trucks Recalled for Potential Loss of Antilock Brakes</a></li>
+          <li><a href="News7.php">Plug & Charge Tech Is Coming to Public EV Chargers to Free Us From Apps and Cards</a></li>
+          <li><a href="News8.php">What’s New for the 2025 Jeep Wagoneer?</a></li>
         </ul>
       </aside>
       
@@ -97,7 +97,7 @@ class News {
       <h2>Latest News</h2>
       <div class="news-item">
         <img src="images/mercedes-benz-glc-350e-2025-01-exterior-front-angle.webp" alt="Tesla Model">
-        <h3><a href="news9.html">2025 Mercedes-Benz GLC350e Review: Use It or Lose It</a></h3>
+        <h3><a href="News9.php">2025 Mercedes-Benz GLC350e Review: Use It or Lose It</a></h3>
         <p>The Tesla Model 2 promises to be an affordable, efficient, and innovative compact car.</p>
       </div>
    
@@ -106,7 +106,7 @@ class News {
   
         <div class="news-item">
           <img src="images/gmc-hummer-ev-3x-2024-03-exterior-dynamic-front.webp" alt="Tesla Model">
-          <h3><a href="news10.html">2024 GMC Hummer EV SUV Review: (4) Tons of Fun!</a></h3>
+          <h3><a href="News10.php">2024 GMC Hummer EV SUV Review: (4) Tons of Fun!</a></h3>
           <p>The Tesla Model 2 promises to be an affordable, efficient, and innovative compact car.</p>
         </div>
         
@@ -114,7 +114,7 @@ class News {
       
         <div class="news-item">
           <img src="images/ford-f-150-lightning-flash-2024-02-exterior-front-angle.webp" alt="Tesla Model">
-          <h3><a href="news11.html">2024 Ford F-150 Lightning Quick Spin: Flash Forward</a></h3>
+          <h3><a href="News11.php">2024 Ford F-150 Lightning Quick Spin: Flash Forward</a></h3>
           <p>The Tesla Model 2 promises to be an affordable, efficient, and innovative compact car.</p>
         </div>
        
