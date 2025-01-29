@@ -1,209 +1,206 @@
 <?php
+session_start();
 
 class News {
-    protected $title;
-
-    public function __construct($title = "") {
-        $this->title = $title;
-    }
-
     public function render() {
        
-    }
-}
+        echo '
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>About Us</title>
+            <link rel="stylesheet" href="newsandreviews.css"> <!-- Link to the CSS file -->
+        </head>
+        <nav>
+            <ul class="slidebar" style="display: none;">
+                <li onclick="hideSideBar()">
+                    <a href="#">
+                        <img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24">
+                    </a>
+                </li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="AboutUs.php">About Us</a></li>
+                <li><a href="ContactUs.php">Contact Us</a></li>
+                <li><a href="newsandreviews.php">News and Reviews</a></li>
+                <li><a href="MyAccount.php">My Account</a></li>
+                <li><a href="Register.php">Sign Up</a></li>
+                <li><a href="LogIn.php">Log In</a></li>
+                <li><a href="MyFavorites.php">My Favorites</a></li>
+                <hr>
+            </ul>
+            <ul class="navbar">
+                <li><a href="#">Maidon</a></li>
+                <li class="hideOnMobile"><a href="home.php">Home</a></li>
+                <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+                <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+                <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+                <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+                <li class="menubutton" onclick="showSidebar()">
+                    <a href="#">
+                        <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+                    </a>
+                </li>
+            </ul>
+        </nav>';
 
-class Header extends News {
-    public function render() {
-        echo "<header>\n";
-        echo "    <h1>{$this->title}</h1>\n";
-        echo "</header>\n";
-    }
-}
+        // Main content of About Us
+        echo '
+        <main class="main-container">
+    <!-- Featured News Slider -->
+    <section class="featured">
+      <h2>Featured News</h2>
+      <div class="slider-container" id="slider-container">
+        <div class="slide active">
+          <img src="images/foto kryesore te news.webp" alt="Featured Car 1">
+          <div class="article-details">
+            <span class="category"> CARS</span>
+            <h1><a href="news1.html
+              ">Nine electric estates available now or in the near future</a></h1>
+            <p>Because everyone knows an estate is infinitely cooler than an SUV</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/lamborghini-temerario_100951093.jpg"Featured Car 2">
+          <div class="article-details">
+            <span class="category">Lamborghini</span>
+            <h1><a href="news2.html">Lamborghini Temerario with over 1,000 hp probably in the pipeline</a></h1>
+            <p>The Lamborghini Temerario already spits out 907 hp but more power is likely for future variants of the car.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/alfa-romeo-33-stradale_100950484.jpg" alt="Modern Alfa Romeo">
+          <div class="article-details">
+            <span class="category">Super Cars</span>
+            <h1><a href="news3.html">Modern Alfa Romeo 33 Stradale hits 207 mph at Nardò</a></h1>
+            <p>Alfa Romeos modern 33 Stradale is just weeks out from starting customer deliveries.</p>
+          </div>
+        </div>
+        <button class="prev">❮</button>
+    <button class="next">❯</button>
+      </div>
+    </section>
 
-class Navbar extends News {
-    private $links;
-
-    public function __construct($links) {
-        $this->links = $links;
-    }
-
-    public function render() {
-        echo "<nav>\n";
-        echo "    <ul class='navbar'>\n";
-        foreach ($this->links as $linkText => $linkHref) {
-            echo "        <li><a href=\"$linkHref\">$linkText</a></li>\n";
-        }
-        echo "    </ul>\n";
-        echo "</nav>\n";
-    }
-}
-
-class NewsSection extends News {
-    private $articles;
-
-    public function __construct($title, $articles) {
-        parent::__construct($title);
-        $this->articles = $articles;
-    }
-
-    public function render() {
-        echo "<section class='news-section'>\n";
-        echo "    <h2>{$this->title}</h2>\n";
-        foreach ($this->articles as $article) {
-            echo "    <div class='news-item'>\n";
-            echo "        <img src=\"{$article['image']}\" alt=\"{$article['title']}\">\n";
-            echo "        <h3><a href=\"{$article['link']}\">{$article['title']}</a></h3>\n";
-            echo "        <p>{$article['description']}</p>\n";
-            echo "    </div>\n";
-        }
-        echo "</section>\n";
-    }
-}
-
-class Footer extends News {
-    private $sections;
-
-    public function __construct($sections) {
-        $this->sections = $sections;
-    }
-
-    public function render() {
-        echo "<footer>\n";
-        foreach ($this->sections as $sectionTitle => $links) {
-            echo "    <div class='footer-section'>\n";
-            echo "        <h2>$sectionTitle</h2>\n";
-            foreach ($links as $linkText => $linkHref) {
-                echo "        <p><a href=\"$linkHref\">$linkText</a></p>\n";
-            }
-            echo "    </div>\n";
-        }
-        echo "</footer>\n";
-    }
-}
-
-class Page {
-    private $header;
-    private $navbar;
-    private $content;
-    private $footer;
-
-    public function __construct($header, $navbar, $content, $footer) {
-        $this->header = $header;
-        $this->navbar = $navbar;
-        $this->content = $content;
-        $this->footer = $footer;
-    }
-
-    public function render() {
-        echo "<!DOCTYPE html>\n<html lang='en'>\n<head>\n";
-        echo "    <meta charset='UTF-8'>\n";
-        echo "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
-        echo "    <title>Maidonn</title>\n";
-        echo "    <link rel='stylesheet' href='newsandrevies.css'>\n";
-
+    <!-- Popular News Sidebar -->
+    <aside class="sidebar">
+        <h3>Popular News</h3>
+        <ul>
+            <li><a href="news4.html">Subaru Tops Consumer Reports Annual Auto Reliability Survey</a></li>
+            <li><a href="news5.html">2025 Mazda MX-5 Miata: Pure Driving Joy Priced From $30,515, 35th Anniversary Edition Inbound</a></li>
+          <li><a href="news6.html">317,000-Plus Ram HD Trucks Recalled for Potential Loss of Antilock Brakes</a></li>
+          <li><a href="news7.html">Plug & Charge Tech Is Coming to Public EV Chargers to Free Us From Apps and Cards</a></li>
+          <li><a href="news8.html">What’s New for the 2025 Jeep Wagoneer?</a></li>
+        </ul>
+      </aside>
       
-        echo "    <script>\n";
-        echo "        document.addEventListener('DOMContentLoaded', function () {\n";
-        echo "            const slides = document.querySelectorAll('.slide');\n";
-        echo "            const prevButton = document.querySelector('.prev');\n";
-        echo "            const nextButton = document.querySelector('.next');\n";
-        echo "            let currentIndex = 0;\n";
-        echo "            \n";
-        echo "            function showSlide(index) {\n";
-        echo "                slides.forEach((slide, i) => {\n";
-        echo "                    slide.classList.toggle('active', i === index);\n";
-        echo "                });\n";
-        echo "            }\n";
-        echo "            \n";
-        echo "            function nextSlide() {\n";
-        echo "                currentIndex = (currentIndex + 1) % slides.length;\n";
-        echo "                showSlide(currentIndex);\n";
-        echo "            }\n";
-        echo "            \n";
-        echo "            function prevSlide() {\n";
-        echo "                currentIndex = (currentIndex - 1 + slides.length) % slides.length;\n";
-        echo "                showSlide(currentIndex);\n";
-        echo "            }\n";
-        echo "            \n";
-        echo "            // Add Event Listeners\n";
-        echo "            nextButton.addEventListener('click', nextSlide);\n";
-        echo "            prevButton.addEventListener('click', prevSlide);\n";
-        echo "            \n";
-        echo "            // Auto Slide\n";
-        echo "            setInterval(nextSlide, 5000);\n";
-        echo "        });\n";
-        echo "\n";
-        echo "        function showSidebar() {\n";
-        echo "            const sidebar = document.querySelector('.slidebar');\n";
-        echo "            sidebar.style.display = 'flex';\n";
-        echo "        }\n";
-        echo "\n";
-        echo "        function hideSideBar() {\n";
-        echo "            const sidebar = document.querySelector('.slidebar');\n";
-        echo "            sidebar.style.display = 'none';\n";
-        echo "        }\n";
-        echo "    </script>\n";
+    
+    <section class="more-news">
+      <h2>Latest News</h2>
+      <div class="news-item">
+        <img src="images/mercedes-benz-glc-350e-2025-01-exterior-front-angle.webp" alt="Tesla Model">
+        <h3><a href="news9.html">2025 Mercedes-Benz GLC350e Review: Use It or Lose It</a></h3>
+        <p>The Tesla Model 2 promises to be an affordable, efficient, and innovative compact car.</p>
+      </div>
+   
+  
 
-        echo "</head>\n<body>\n";
+  
+        <div class="news-item">
+          <img src="images/gmc-hummer-ev-3x-2024-03-exterior-dynamic-front.webp" alt="Tesla Model">
+          <h3><a href="news10.html">2024 GMC Hummer EV SUV Review: (4) Tons of Fun!</a></h3>
+          <p>The Tesla Model 2 promises to be an affordable, efficient, and innovative compact car.</p>
+        </div>
+        
+ 
+      
+        <div class="news-item">
+          <img src="images/ford-f-150-lightning-flash-2024-02-exterior-front-angle.webp" alt="Tesla Model">
+          <h3><a href="news11.html">2024 Ford F-150 Lightning Quick Spin: Flash Forward</a></h3>
+          <p>The Tesla Model 2 promises to be an affordable, efficient, and innovative compact car.</p>
+        </div>
+       
+      </section>
+  
 
-        $this->header->render();
-        $this->navbar->render();
-        foreach ($this->content as $section) {
-            $section->render();
-        }
-        $this->footer->render();
+    <section class="reviews">
+      <h2>User Reviews</h2>
+      <div class="review">
+          <h3>Audi A5</h3>
+          <p>The A5 offers a relaxed yet capable driving experience, with a range of petrol and diesel engines. While not the most exciting, it's well-suited for those prioritizing comfort and efficiency, especially with options like the 2.0 TFSI. It's a solid family car with good economy, especially for a luxury seda</p>
+          <div class="rating">
+              <span class="star">⭐⭐⭐⭐⭐</span>
+          </div>
+      </div>
+      <div class="review">
+          <h3>Audi A8</h3>
+          <p>Known for its refined luxury, the A8 excels in both comfort and technology. It’s a spacious sedan, ideal for those seeking top-tier luxury and advanced features, including a choice of hybrid powertrains​
+        </p>
+          <div class="rating">
+              <span class="star">⭐⭐⭐⭐</span>
+          </div>
+      </div>
 
-        echo "</body>\n</html>\n";
+      <div class="review">
+        <h3>BMW X5 M Sport</h3>
+        <p>A high-performance SUV, the X5 M Sport blends power with luxury, offering a dynamic driving experience. With strong engine options, advanced features, and a spacious interior, its great for those who want a sporty SUV that doesn’t sacrifice comfort​</p>
+        <div class="rating">
+            <span class="star">⭐⭐⭐⭐⭐</span>
+        </div>
+    </div>
+    <div class="review">
+        <h3>VW Touareg</h3>
+        <p>This SUV offers a balance of luxury and practicality. It stands out with its stylish design, premium interior, and powerful engines. It’s a solid choice for those seeking a refined, capable off-roade</p>
+        <div class="rating">
+            <span class="star">⭐⭐⭐⭐⭐</span>
+        </div>
+    </div>
+    <div class="review">
+        <h3>BMW 320d</h3>
+        <p>A favorite for those looking for a blend of sportiness and efficiency. The 320d’s diesel engine provides a solid performance while maintaining great fuel economy, making it a practical yet fun option</p>
+        <div class="rating">
+            <span class="star">⭐⭐⭐⭐⭐</span>
+        </div>
+    </div>
+    </section>
+  </main>';
+
+        // Render Footer
+        echo '
+        <footer class="footer">
+            <div class="footer-box locations">
+                <h2>Our Locations</h2>
+                <div class="location">
+                    <h4>Prishtine</h4>
+                    <p>Magjistralja Prishtine-Ferizaj</p>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.5585414513607!2d21.136597699999996!3d42.607108999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549d850013cd65%3A0xdcf85db2fff2afc9!2sAutoSallon%20Maidonn!5e0!3m2!1sen!2s!4v1733581276957!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="footer-box social">
+                <h2>Join the Maidonn Social Community</h2>
+                <div class="social-links">
+                    <a href="https://m.facebook.com/100070756819509/"><img src="images/Download Facebook logo png, Facebook logo transparent png, Facebook icon transparent free png (1).png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/autosallonimaidonn"><img src="images/Download Instagram logo png, Instagram icon transparent.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@autosallonmaidonn5"><img src="images/tiktok-logo-tiktok-logo-transparent-tiktok-icon-transparent-free-free-png.png" alt="TikTok"></a>
+                </div>
+            </div>
+
+            <div class="footer-box navigation">
+                <h2>Quick Links</h2>
+                <p><a href="AboutUs.php">About Us</a></p>
+                <p><a href="ContactUs.php">Contact</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Terms of Service</a></p>
+            </div>
+        </footer>
+        <div class="footer-bottom">
+            <p>© 2024 Maidonn. All rights reserved.</p>
+        </div>';
     }
 }
 
-$header = new Header("Maidonn - News and Reviews");
 
-$navbarLinks = [
-    "Home" => "home.php",
-    "About Us" => "AboutUs.php",
-    "Contact Us" => "ContactUs.php",
-    "News and Reviews" => "newsandreviews.php",
-    "My Account" => "MyAccount.php",
-];
-$navbar = new Navbar($navbarLinks);
-
-$newsArticles = [
-    [
-        "image" => "images/foto1.webp",
-        "title" => "Nine electric estates available now",
-        "link" => "news1.html",
-        "description" => "Because everyone knows an estate is infinitely cooler than an SUV",
-    ],
-    [
-        "image" => "images/foto2.jpg",
-        "title" => "Lamborghini Temerario with over 1,000 hp",
-        "link" => "news2.html",
-        "description" => "Lamborghini Temerario already spits out 907 hp but more power is likely",
-    ],
-    [
-        "image" => "images/foto3.jpg",
-        "title" => "Modern Alfa Romeo hits 207 mph",
-        "link" => "news3.html",
-        "description" => "Alfa Romeo's modern 33 Stradale is just weeks out from deliveries",
-    ],
-];
-$newsSection = new NewsSection("Latest News", $newsArticles);
-
-$footerSections = [
-    "Quick Links" => [
-        "About Us" => "AboutUs.php",
-        "Contact" => "ContactUs.php",
-        "Privacy Policy" => "#",
-        "Terms of Service" => "#",
-    ],
-    "Follow Us" => [
-        "Facebook" => "https://facebook.com",
-        "Instagram" => "https://instagram.com",
-        "TikTok" => "https://tiktok.com",
-    ],
-];
-$footer = new Footer($footerSections);
-
-$page = new Page($header, $navbar, [$newsSection], $footer);
-$page->render();
+$newsandreviewsPage = new News();
+$newsandreviewsPage->render();
+?> 
