@@ -44,7 +44,7 @@ class User {
     
               
                 if (strpos($email, '@admin.com') !== false) {
-                    // Përdoruesi është administrator
+                    
                     header("Location: dashboard.php");
                     exit;
                 } else if (strpos($email, '@gmail.com') !== false) {

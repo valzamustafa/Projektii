@@ -130,11 +130,7 @@ class AboutUs {
         <div class="footer-bottom">
             <p>© 2024 Maidonn. All rights reserved.</p>
         </div>
-<<<<<<< HEAD
-        
-=======
          <script src="AboutUs.js"></script>
->>>>>>> cb5b85869774ee38feb5b1c242f841629c1b17bd
         ';
     }
 }

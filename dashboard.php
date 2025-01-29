@@ -3,7 +3,7 @@ require_once 'db_connection.php';
 session_start();
 
 if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === false) {
-    header("Location: MyAccount.php"); // Redirect if not admin
+    header("Location: MyAccount.php"); 
     exit;
 }
 ?>

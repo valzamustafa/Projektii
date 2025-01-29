@@ -1,16 +1,16 @@
 <?php
-// Përdorni lidhjen me bazën e të dhënave
+
 include('db_connection.php'); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Merrni të dhënat nga formulari
+    
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    // Kontrolloni nëse të dhënat janë të plota
+ 
     if (!empty($name) && !empty($email) && !empty($message)) {
-        // Ruaj mesazhin në bazën e të dhënave
+      
         $stmt = $conn->prepare("INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $name, $email, $message);
 
