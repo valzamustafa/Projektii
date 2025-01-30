@@ -59,7 +59,7 @@ $result = $conn->query("SELECT * FROM cars");
                     </div>
                     <p>Viti ' . $row['year'] . '</p>
                     <div class="price">Çmimi: ' . $row['price'] . '€</div>
-                    <a href="javascript:void(0)" class="button">Add to Favorites</a>
+                    <a href="MyFavorites.php" class="button">Add to Favorites</a>
                   </div>';
         }
         ?>
