@@ -164,16 +164,16 @@ nav li:first-child {
     border-radius: 5px;
 }
 
-/* 🔹 CONTENT */
+
 .content {
     display: flex;
-    flex-wrap: wrap; /* Kjo do ta bëjë që përmbajtja të ketë hapësirë horizontale */
+    flex-wrap: wrap; 
     justify-content: space-between;
     align-items: flex-start;
     padding: 50px 20px;
     margin-left: 270px;
     width: calc(100% - 270px);
-    gap: 20px; /* Hapësirë mes elementëve */
+    gap: 20px; 
 }
 
 .content h1 {
@@ -204,7 +204,7 @@ table a {
     color: blue;
 }
 
-/* 🔹 TABELA MAKINAVE */
+
 table.cars {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;

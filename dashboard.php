@@ -33,6 +33,7 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
+            <li><a href="log.out.php">Log Out</a></li>
             <hr>
         </ul>
         <ul class="navbar">
@@ -68,6 +69,7 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
 
    
     <div id="carFormContainer" style="display: none;"></div>
+    <script src="dashboard.js"></script>
 </div>
 </body>
 </html>

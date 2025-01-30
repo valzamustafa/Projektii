@@ -76,6 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
+            <li><a href="log.out.php">Log Out</a></li>
             <hr>
         </ul>  
 

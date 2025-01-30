@@ -27,6 +27,7 @@ class Navigation {
         echo '<li><a href="Register.php">Sign Up</a></li>';
         echo '<li><a href="LogIn.php">Log In</a></li>';
         echo '<li><a href="MyFavorites.php">My Favorites</a></li>';
+        echo '<li><a href="log.out.php">Log Out</a></li>';
         echo '</ul>';
         echo '<ul class="navbar">';
         echo '<li><a href="#">Maidon</a></li>';

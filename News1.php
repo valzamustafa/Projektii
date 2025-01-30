@@ -33,6 +33,7 @@ class Sidebar {
         'signup' => 'Register.php',
         'login' => 'LogIn.php',
         'favorites' => 'MyFavorites.php',
+        'logout' => 'log.out.php',
     ];
 
     public function render() {

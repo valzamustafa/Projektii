@@ -2,14 +2,13 @@
 include('db_connection.php');
 include('ContactMessage.php');
 
-// Create a new instance of the Database class
 $database = new Database();
 $conn = $database->getConnection();
 
-// Create a new instance of the ContactMessage class
+
 $contactMessage = new ContactMessage($conn);
 
-// Get the contact messages from the database
+
 $result = $contactMessage->getMessages();
 
 ?>
@@ -38,6 +37,7 @@ $result = $contactMessage->getMessages();
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
+            <li><a href="log.out.php">Log Out</a></li>
             <hr>
     
         </ul>  

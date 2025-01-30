@@ -17,6 +17,7 @@ class Navigation {
                 <li><a href="Register.php">Sign Up</a></li>
                 <li><a href="LogIn.php">Log In</a></li>
                 <li><a href="MyFavorites.php">My Favorites</a></li>
+                  <li><a href="log.out.php">Log In</a></li>
                 <hr>
             </ul>
             <ul class="navbar">

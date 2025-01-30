@@ -2,27 +2,27 @@
 require_once 'db_connection.php';
 session_start();
 
-// Kontrollo nëse përdoruesi është admin
+
 if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === false) {
     header("Location: MyAccount.php");
     exit;
 }
 
-// Krijo lidhjen me databazën
+
 $db = new Database();
 $conn = $db->getConnection();
 
-// Shto makinë të re
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_car"])) {
     $name = $_POST["name"];
     $description = $_POST["description"];
     $year = $_POST["year"];
     $price = $_POST["price"];
 
-    // Procesimi i imazhit
+  
     $targetDir = "uploads/";
     
-    // Krijo folderin nëse nuk ekziston
+    
     if (!is_dir($targetDir)) {
         mkdir($targetDir, 0777, true);
     }
@@ -43,11 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_car"])) {
     }
 }
 
-// Fshij një makinë
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_car"])) {
     $car_id = $_POST["car_id"];
 
-    // Gjej imazhin dhe fshije nga serveri
+    
     $stmt = $conn->prepare("SELECT image FROM cars WHERE id = ?");
     $stmt->bind_param("i", $car_id);
     $stmt->execute();

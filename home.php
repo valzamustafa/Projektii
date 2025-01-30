@@ -64,6 +64,7 @@ $cars = Car::getAllCars();
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
+            <li><a href="log.out.php">Log Out</a></li>
             <li id="dashboard-link" style="display: none;"><a href="dashboard.html">Dashboard</a></li> 
             <hr>
         </ul>  

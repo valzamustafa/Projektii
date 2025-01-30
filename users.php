@@ -1,19 +1,17 @@
 <?php
-// Përfshirja e klasës që lidh me databazën
+
 require_once 'db_connection.php'; 
 session_start();
 
 if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === false) {
-    header("Location: MyAccount.php"); // Redirect if not admin
-    exit;
+    header("Location: MyAccount.php");
 }
 
-// Krijo instancën e klasës Database
 $database = new Database();
 $conn = $database->getConnection();
 
-// Fetch users from the database
-$sql = "SELECT first_name, last_name, email, role FROM manage_users";  // Emri i tabelës është manage_users
+
+$sql = "SELECT first_name, last_name, email, role FROM manage_users";  
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -46,6 +44,7 @@ if (!$result) {
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
+            <li><a href="log.out.php">Log Out</a></li>
             <hr>
     
         </ul>  

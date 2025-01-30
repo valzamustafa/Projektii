@@ -37,11 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
-    <link rel="stylesheet" href="LogIn.css"> <!-- Shtoni stilin tuaj të personalizuar -->
+    <link rel="stylesheet" href="LogIn.css"> 
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav>
         <ul class="slidebar" style="display: none;">
             <li onclick="hideSideBar()">
@@ -57,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
+			<li><a href="log.out.php">Log Out</a></li>
             <hr>
         </ul>  
 
@@ -75,12 +75,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </ul>  
     </nav>
 
-    <!-- Formulari i kyçjes -->
+ 
     <div class="login-container">
         <div class="login-box">
             <h2>Log In</h2>
             
-            <!-- Formulari për kyçje -->
+      
             <form action="LogIn.php" method="POST">
                 <div class="input-group">
                     <label for="email">Email</label>
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="password" name="password" required>
                 </div>
                 
-                <!-- Shfaq mesazhin e gabimit nëse kyçja ka dështuar -->
+                
                 <?php if (isset($error_message)): ?>
                     <div class="error-message" style="color: red;">
                         <?php echo $error_message; ?>
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <div class="footer-box locations">
             <h2>Our Locations</h2>
