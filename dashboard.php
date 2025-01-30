@@ -8,16 +8,17 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
 }
 ?>
 
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Eventopia Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-<nav>
+<header >
+    <nav>
         <ul class="slidebar" style="display: none;">
             <li onclick="hideSideBar()">
                 <a href="#">
@@ -33,14 +34,22 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
             <hr>
-    
-        </ul>  
-    
-
+        </ul>
+        <ul class="navbar">
+            <li><a href="#">Maidon</a></li>
+            <li class="hideOnMobile"><a href="home.php">Home</a></li>
+            <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+            <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+            <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+            <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+            <li class="menubutton" onclick="showSidebar()">
+                <a href="#">
+                    <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+                </a>
+            </li>
+        </ul>
     </nav>
-
-
-    
+   
     <div class="sidebar">
         <h2>Car Dealership - Admin Panel</h2>
         <ul>
@@ -51,9 +60,14 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
         </ul>
     </div>
     <div class="content">
-        <h1>Mirësevini në Dashboard</h1>
-        <p>Këtu mund të menaxhoni përdoruesit, makinat, lajmet dhe mesazhet.</p>
-    </div>
-    <script src="dashboard.js"></script>
+    <h1>Mirësevini në Dashboard</h1>
+   
+
+
+    <button id="showCarForm">Shto Makinë të Re</button>
+
+   
+    <div id="carFormContainer" style="display: none;"></div>
+</div>
 </body>
 </html>
