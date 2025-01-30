@@ -45,7 +45,7 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
         <h2>Car Dealership - Admin Panel</h2>
         <ul>
             <li><a href="users.php">Menaxho Përdoruesit</a></li>
-            <li><a href="cars.php">Menaxho Makinat</a></li>
+            <li><a href="filter.php">Menaxho Makinat</a></li>
      
             <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
         </ul>
