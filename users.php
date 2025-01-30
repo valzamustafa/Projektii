@@ -71,6 +71,7 @@ if (!$result) {
             <li><a href="cars.php">Menaxho Makinat</a></li>
      
             <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
         </ul>
     </div>
   
