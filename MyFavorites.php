@@ -23,24 +23,24 @@ class FavoritesPage {
                             <img src='images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png' alt='Close Sidebar' height='24' width='24'>
                         </a>
                     </li>
-                    <li><a href='home.html'>Home</a></li>
-                    <li><a href='AboutUs.html'>About Us</a></li>
-                    <li><a href='ContactUs.html'>Contact Us</a></li>
-                    <li><a href='newsandreviews.html'>News and Reviews</a></li>
-                    <li><a href='MyAccoutn.html'>My Account</a></li>
-                    <li><a href='Register.html'>Sign Up</a></li>
-                    <li><a href='LogIn.html'>Log In</a></li>
-                    <li><a href='MyFavorites.html'>My Favorites</a></li>
+                    <li><a href='home.php'>Home</a></li>
+                    <li><a href='AboutUs.php'>About Us</a></li>
+                    <li><a href='ContactUs.php'>Contact Us</a></li>
+                    <li><a href='newsandreviews.php'>News and Reviews</a></li>
+                    <li><a href='MyAccoutn.php'>My Account</a></li>
+                    <li><a href='Register.php'>Sign Up</a></li>
+                    <li><a href='LogIn.php'>Log In</a></li>
+                    <li><a href='MyFavorites.php'>My Favorites</a></li>
                     <hr>
                 </ul>  
 
                 <ul class='navbar'>
                     <li><a href='#'>Maidon</a></li>
-                    <li class='hideOnMobile'><a href='home.html'>Home</a></li>
-                    <li class='hideOnMobile'><a href='AboutUs.html'>About Us</a></li>
-                    <li class='hideOnMobile'><a href='ContactUs.html'>Contact Us</a></li>
-                    <li class='hideOnMobile'><a href='newsandreviews.html'>News and Reviews</a></li>
-                    <li class='hideOnMobile'><a href='MyAccoutn.html'>My Account</a></li>
+                    <li class='hideOnMobile'><a href='home.php'>Home</a></li>
+                    <li class='hideOnMobile'><a href='AboutUs.php'>About Us</a></li>
+                    <li class='hideOnMobile'><a href='ContactUs.php'>Contact Us</a></li>
+                    <li class='hideOnMobile'><a href='newsandreviews.php'>News and Reviews</a></li>
+                    <li class='hideOnMobile'><a href='MyAccoutn.php'>My Account</a></li>
                     <li class='menubutton' onclick='showSidebar()'>
                         <a href='#'>
                             <img src='images/menuwhite.png' alt='Menu' height='24' width='24'>
@@ -74,8 +74,8 @@ class FavoritesPage {
             
                 <div class='footer-box navigation'>
                     <h2>Quick Links</h2>
-                    <p><a href='AboutUs.html'>About Us</a></p>
-                    <p><a href='ContactUs.html'>Contact</a></p>
+                    <p><a href='AboutUs.php'>About Us</a></p>
+                    <p><a href='ContactUs.php'>Contact</a></p>
                     <p><a href='#'>Privacy Policy</a></p>
                     <p><a href='#'>Terms of Service</a></p>
                 </div>
