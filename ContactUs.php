@@ -2,11 +2,11 @@
 include('db_connection.php');
 include('ContactMessage.php');
 
-// Create a new instance of the Database class
+
 $database = new Database();
 $conn = $database->getConnection();
 
-// Create a new instance of the ContactMessage class
+
 $contactMessage = new ContactMessage($conn);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -110,7 +110,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
 
-        <!-- Display success or error message -->
         <?php if (isset($success_message)) { ?>
             <div class="success-message"><?php echo $success_message; ?></div>
         <?php } ?>

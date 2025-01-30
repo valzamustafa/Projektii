@@ -33,7 +33,6 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
-            <li><a href="log.out.php">Log Out</a></li>
             <hr>
         </ul>
         <ul class="navbar">
@@ -56,8 +55,8 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
         <ul>
             <li><a href="users.php">Menaxho Përdoruesit</a></li>
             <li><a href="cars.php">Menaxho Makinat</a></li>
-     
-            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+            <li><a href="add_content.php">Menaxho Content</a></li>
+            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
         </ul>
     </div>
     <div class="content">
@@ -69,6 +68,9 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
 
    
     <div id="carFormContainer" style="display: none;"></div>
+    <button id="showAboutUsForm" onclick="document.getElementById('aboutUsFormContainer').style.display='block'">Edito Përmbajtjen e About Us</button>
+
+
     <script src="dashboard.js"></script>
 </div>
 </body>
