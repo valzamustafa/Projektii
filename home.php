@@ -88,7 +88,7 @@ $cars = Car::getAllCars();
     <section class="front">
         <div class="front-text">
             <h1>Let's get you to the Road</h1>
-            <a href="filter.html" class="button">Discover Now</a>
+            <a href="filter.php" class="button">Discover Now</a>
         </div>
     </section>
 
