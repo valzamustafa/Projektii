@@ -5,7 +5,6 @@ include('ContactMessage.php');
 $database = new Database();
 $conn = $database->getConnection();
 
-
 $contactMessage = new ContactMessage($conn);
 
 
@@ -37,12 +36,21 @@ $result = $contactMessage->getMessages();
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
-            <li><a href="log.out.php">Log Out</a></li>
             <hr>
-    
-        </ul>  
-    
-
+        </ul>
+        <ul class="navbar">
+            <li><a href="#">Maidon</a></li>
+            <li class="hideOnMobile"><a href="home.php">Home</a></li>
+            <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+            <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+            <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+            <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+            <li class="menubutton" onclick="showSidebar()">
+                <a href="#">
+                    <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+                </a>
+            </li>
+        </ul>
     </nav>
 
 
@@ -52,12 +60,12 @@ $result = $contactMessage->getMessages();
         <ul>
             <li><a href="users.php">Menaxho Përdoruesit</a></li>
             <li><a href="cars.php">Menaxho Makinat</a></li>
+     
             <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
-            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
         </ul>
     </div>
     <h2>Contact Messages</h2>
-    <table border="1">
+    <table class="contact" border="1">
         <tr>
             <th>ID</th>
             <th>Name</th>
