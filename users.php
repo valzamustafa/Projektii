@@ -1,17 +1,19 @@
 <?php
-
+// Përfshirja e klasës që lidh me databazën
 require_once 'db_connection.php'; 
 session_start();
 
 if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === false) {
-    header("Location: MyAccount.php");
+    header("Location: MyAccount.php"); // Redirect if not admin
+    exit;
 }
 
+// Krijo instancën e klasës Database
 $database = new Database();
 $conn = $database->getConnection();
 
-
-$sql = "SELECT first_name, last_name, email, role FROM manage_users";  
+// Fetch users from the database
+$sql = "SELECT first_name, last_name, email, role FROM manage_users";  // Emri i tabelës është manage_users
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -44,14 +46,22 @@ if (!$result) {
             <li><a href="Register.php">Sign Up</a></li>
             <li><a href="LogIn.php">Log In</a></li>
             <li><a href="MyFavorites.php">My Favorites</a></li>
-            <li><a href="log.out.php">Log Out</a></li>
             <hr>
-    
-        </ul>  
-    
-
+        </ul>
+        <ul class="navbar">
+            <li><a href="#">Maidon</a></li>
+            <li class="hideOnMobile"><a href="home.php">Home</a></li>
+            <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+            <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+            <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+            <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+            <li class="menubutton" onclick="showSidebar()">
+                <a href="#">
+                    <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+                </a>
+            </li>
+        </ul>
     </nav>
-
 
     
     <div class="sidebar">
@@ -61,6 +71,7 @@ if (!$result) {
             <li><a href="cars.php">Menaxho Makinat</a></li>
      
             <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
         </ul>
     </div>
   
