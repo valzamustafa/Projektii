@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <form method="POST" action="add_car.php">
     <input type="text" name="name" placeholder="Car Name" required><br>
-    <textarea name="descripaaaaaaaaaaaaaaaaaaaation" placeholder="Description" required></textarea><br>
+    <textarea name="description" placeholder="Description" required></textarea><br>
     <input type="number" name="year" placeholder="Year" required><br>
     <input type="number" name="price" placeholder="Price" required><br>
     <input type="text" name="image" placeholder="Image URL" required><br>
