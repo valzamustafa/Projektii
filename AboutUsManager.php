@@ -39,7 +39,7 @@ class AboutUsManager {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           
             $content = htmlspecialchars($_POST['content']); 
-            $this->saveContentToDatabase($title, $content);
+            $this->saveContentToDatabase( $content);
         }
     }
 }
