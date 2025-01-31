@@ -57,6 +57,7 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
             <li><a href="cars.php">Menaxho Makinat</a></li>
             <li><a href="add_content.php">Menaxho Content</a></li>
             <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+            <li><a href="manage_news.php">Menaxho News</a></li>
         </ul>
     </div>
     <div class="content">

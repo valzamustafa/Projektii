@@ -92,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_car"])) {
         <li><a href="cars.php">Menaxho Makinat</a></li>
         <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
         <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+        <li><a href="manage_news.php">Menaxho News</a></li>
     </ul>
 </div>
 
