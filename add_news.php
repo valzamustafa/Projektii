@@ -36,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $image = $_FILES['image'];
 
  
-    if (empty($title)  empty($content)  empty($category) || empty($image)) {
+    if (empty($title) || empty($content) || empty($category) || empty($image)) {
+
         echo "All fields are required.";
     } else {
 
