@@ -163,7 +163,7 @@ if (isset($_POST['submit'])) {
 
         form button {
             grid-column: span 2;
-            background-color: #4CAF50;
+            background-color: #f0a500; 
             color: white;
             padding: 10px;
             border: none;
@@ -171,7 +171,7 @@ if (isset($_POST['submit'])) {
         }
 
         form button:hover {
-            background-color: #45a049;
+            background-color: #f1c40f;
         }
 
         @media (max-width: 600px) {

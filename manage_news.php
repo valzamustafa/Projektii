@@ -125,7 +125,7 @@ $result = $newsManager->getAllNews();
 
         form button {
             grid-column: span 2;
-            background-color: #4CAF50;
+            background-color: #f0a500; 
             color: white;
             padding: 10px;
             border: none;
@@ -133,7 +133,8 @@ $result = $newsManager->getAllNews();
         }
 
         form button:hover {
-            background-color: #45a049;
+            background-color: #f1c40f;
+
         }
 
         th, td {
@@ -169,6 +170,38 @@ $result = $newsManager->getAllNews();
                 width: 40px;
             }
         }
+               
+.delete-link {
+    background-color: #f0a500; 
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-right: 10px;
+}
+
+.delete-link:hover {
+    background-color: #f1c40f;
+}
+
+.edit-link {
+    font-size: 14px;
+   background-color: #f0a500; 
+    text-decoration: none;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-link:hover {
+  
+    background-color: #f1c40f;
+}
+
     </style>
 <nav>
     <ul class="slidebar" style="display: none;">
@@ -203,7 +236,7 @@ $result = $newsManager->getAllNews();
     </ul>  
 </nav>
 <div class="sidebar">
-    <h2>Admin Panel - About Us</h2>
+    <h2>Admin Panel - News</h2>
     <ul>
     <li><a href="users.php">Menaxho Përdoruesit</a></li>
             <li><a href="cars.php">Menaxho Makinat</a></li>
@@ -267,7 +300,9 @@ $result = $newsManager->getAllNews();
                 <td><img src="uploads/<?php echo $row['image']; ?>" width="100"></td>
                 <td><?php echo $row['created_at']; ?></td>
                 <td>
-                    <a href="manage_news.php?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                    
+                    <a href="manage_news.php?delete=<?php echo $row['id']; ?>" class="delete-link" onclick="return confirm('Are you sure?')">Delete</a>
+
                     <form action="edit_news.php" method="GET" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
                         <button type="submit" class="edit-button">Edit</button>

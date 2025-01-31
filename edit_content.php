@@ -56,6 +56,87 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_content"])) {
     <title>Edito Përmbajtjen - About Us</title>
     <link rel="stylesheet" href="dashboard.css">
 </head>
+   <style>
+       
+       .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    max-width: 100%;
+    margin: 0;
+}
+
+.content label {
+    font-weight: bold;
+    
+}
+
+.content input,
+.content select,
+.content textarea {
+    width: 100%;
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.content textarea {
+    height: 420px;
+    grid-column: span 2; 
+}
+
+.content button {
+    grid-column: span 2;
+    background-color: #f0a500; 
+    color: white;
+    padding: 12px; 
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 6px; 
+}
+
+
+
+
+@media (max-width: 600px) {
+   .content {
+        grid-template-columns: 1fr; 
+    }
+}
+   </style>
+      <nav>
+        <ul class="slidebar" style="display: none;">
+            <li onclick="hideSideBar()">
+                <a href="#">
+                    <img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24">
+                </a>
+            </li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="AboutUs.php">About Us</a></li>
+            <li><a href="ContactUs.php">Contact Us</a></li>
+            <li><a href="newsandreviews.php">News and Reviews</a></li>
+            <li><a href="MyAccount.php">My Account</a></li>
+            <li><a href="Register.php">Sign Up</a></li>
+            <li><a href="LogIn.php">Log In</a></li>
+            <li><a href="MyFavorites.php">My Favorites</a></li>
+            <hr>
+        </ul>
+        <ul class="navbar">
+            <li><a href="#">Maidon</a></li>
+            <li class="hideOnMobile"><a href="home.php">Home</a></li>
+            <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+            <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+            <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+            <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+            <li class="menubutton" onclick="showSidebar()">
+                <a href="#">
+                    <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+                </a>
+            </li>
+        </ul>
+    </nav>
 <body>
 <div class="sidebar">
     <h2>Admin Panel</h2>
@@ -72,8 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_content"])) {
     <h1>Edito Përmbajtjen</h1>
     
     <form method="POST">
-        <label for="title">Titulli:</label>
-        <input type="text" id="title" name="title" value="<?= htmlspecialchars($content['title']) ?>" required>
+      
 
         <label for="content">Përmbajtja:</label>
         <textarea id="content" name="content" rows="4" required><?= htmlspecialchars($content['content']) ?></textarea>
