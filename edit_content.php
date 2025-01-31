@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_content"])) {
     $content_text = trim(htmlspecialchars($_POST["content"]));
 
     if (!empty($content_text)) {
-        $stmt = $conn->prepare("UPDATE about_us SET  content = ? WHERE id = ?");
+        $stmt = $conn->prepare("UPDATE about_us SET title = ?, content = ? WHERE id = ?");
         $stmt->bind_param("ssi",  $content_text, $content_id);
         $stmt->execute();
         $stmt->close();
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_content"])) {
         header("Location: add_content.php"); 
         exit;
     } else {
-        echo "⚠️ Përmbajtja nuk mund të jenë bosh!";
+        echo "⚠️ Titulli dhe përmbajtja nuk mund të jenë bosh!";
     }
 }
 ?>
@@ -60,10 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_content"])) {
 <div class="sidebar">
     <h2>Admin Panel</h2>
     <ul>
-        <li><a href="users.php">Menaxho Përdoruesit</a></li>
-        <li><a href="about_us.php">Menaxho About Us</a></li>
-        <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
-        <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+    <li><a href="users.php">Menaxho Përdoruesit</a></li>
+            <li><a href="cars.php">Menaxho Makinat</a></li>
+            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+            <li><a href="manage_news.php">Menaxho News</a></li>
     </ul>
 </div>
 
@@ -71,7 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_content"])) {
     <h1>Edito Përmbajtjen</h1>
     
     <form method="POST">
-      
+        <label for="title">Titulli:</label>
+        <input type="text" id="title" name="title" value="<?= htmlspecialchars($content['title']) ?>" required>
+
         <label for="content">Përmbajtja:</label>
         <textarea id="content" name="content" rows="4" required><?= htmlspecialchars($content['content']) ?></textarea>
 

@@ -4,7 +4,7 @@ require_once 'db_connection.php';
 session_start();
 
 if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === false) {
-    header("Location: MyAccount.php"); 
+    header("Location: MyAccount.php");
     exit;
 }
 
@@ -13,7 +13,7 @@ $database = new Database();
 $conn = $database->getConnection();
 
 
-$sql = "SELECT first_name, last_name, email, role FROM manage_users";  
+$sql = "SELECT first_name, last_name, email, role FROM manage_users"; 
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -31,6 +31,33 @@ if (!$result) {
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+    <style>
+       
+.action-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 10px; 
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.delete-btn {
+    background-color: #f0a500; 
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #f1c40f;
+}
+
+
+
+    </style>
 <nav>
         <ul class="slidebar" style="display: none;">
             <li onclick="hideSideBar()">
@@ -67,12 +94,11 @@ if (!$result) {
     <div class="sidebar">
         <h2>Car Dealership - Admin Panel</h2>
         <ul>
-            <li><a href="users.php">Menaxho Përdoruesit</a></li>
+        <li><a href="users.php">Menaxho Përdoruesit</a></li>
             <li><a href="cars.php">Menaxho Makinat</a></li>
-     
             <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
             <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
-            <li><a href="menage_news.php">Menaxho News</a></li>
+            <li><a href="manage_news.php">Menaxho News</a></li>
         </ul>
     </div>
   
@@ -85,7 +111,7 @@ if (!$result) {
                     <th>Mbiemri</th>
                     <th>Email</th>
                     <th>Roli</th>
-                    <th>Akcija</th>
+                    <th>Veprimi</th>
                 </tr>
             </thead>
             <tbody>
@@ -96,7 +122,8 @@ if (!$result) {
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo ucfirst($row['role']); ?></td>
                         <td>
-    <a href="delete_user.php?id=<?php echo $row['email']; ?>" class="delete-btn">Fshi</a>
+    <a href="delete_user.php?id=<?php echo $row['email']; ?>" class="action-btn delete-btn">Fshi</a>
+   
 </td>
 
                     </tr>
@@ -104,7 +131,6 @@ if (!$result) {
             </tbody>
         </table>
     </div>
-    <script src="dashboard.js"></script>
 </body>
 </html>
 

@@ -201,7 +201,7 @@ table th {
 
 table a {
     text-decoration: none;
-    color: blue;
+    
 }
 
 /* 🔹 TABELA MAKINAVE */
@@ -275,7 +275,7 @@ table.contact tr:hover {
 
 .actions button {
     padding: 8px 15px;
-    background-color: #00a8ff;
+    background-color: #f0a500;
     color: white;
     border: none;
     cursor: pointer;
@@ -351,13 +351,13 @@ table tr:hover {
 
 table a {
     text-decoration: none;
-    color: #00a8ff;
+   
     font-weight: bold;
 }
 
 .actions button {
     padding: 10px 15px;
-    background-color: #00a8ff;
+    background-color: #f0a500;
     color: white;
     border: none;
     cursor: pointer;
@@ -366,9 +366,8 @@ table a {
 }
 
 .actions button:hover {
-    background-color: #007bb5;
+    background-color: #f1c40f;
 }
-
 
 @media (max-width: 900px) {
     .table {

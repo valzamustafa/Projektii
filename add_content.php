@@ -64,7 +64,7 @@ $content = $result->fetch_all(MYSQLI_ASSOC);
 
         .add-content-btn:hover {
             background-color: #f1c40f;
-        }
+}
 
         #addContentForm {
             display: none;
@@ -109,7 +109,7 @@ $content = $result->fetch_all(MYSQLI_ASSOC);
 }
 
 .content-table td form button {
-    background-color: #e74c3c;
+    background-color: #f0a500;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -120,11 +120,11 @@ $content = $result->fetch_all(MYSQLI_ASSOC);
 }
 
 .content-table td form button:hover {
-    background-color: #c0392b;
+    background-color: #f1c40f;
 }
 
 .content-table td form .edit-button {
-    background-color: #27ae60;
+    background-color: #f0a500;
     padding: 10px 18px;
     color: white;
     border-radius: 8px;
@@ -134,7 +134,7 @@ $content = $result->fetch_all(MYSQLI_ASSOC);
 }
 
 .content-table td form .edit-button:hover {
-    background-color: #219150;
+    background-color: #f1c40f;
 }
 
 @media (max-width: 900px) {
@@ -167,6 +167,58 @@ $content = $result->fetch_all(MYSQLI_ASSOC);
     </script>
 </head>
 <body>
+    <style>
+       
+       .add-content-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    max-width: 100%;
+    margin: 0;
+}
+
+.add-content-form label {
+    font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.add-content-formtextarea {
+    height: 420px;
+    grid-column: span 2; 
+}
+
+.add-content-form button {
+    grid-column: span 2;
+    background-color: #f0a500; 
+    color: white;
+    padding: 12px; 
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 6px; 
+}
+
+form button:hover {
+    background-color: #f1c40f;
+}
+
+
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr; 
+    }
+}
+
+    </style>
 <nav>
     <ul class="slidebar" style="display: none;">
         <li onclick="hideSideBar()">
@@ -203,11 +255,11 @@ $content = $result->fetch_all(MYSQLI_ASSOC);
 <div class="sidebar">
     <h2>Admin Panel - About Us</h2>
     <ul>
-        <li><a href="users.php">Menaxho Përdoruesit</a></li>
-        <li><a href="cars.php">Menaxho Makinat</a></li>
-        <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
-        <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
-        <li><a href="manage_news.php">Menaxho News</a></li>
+    <li><a href="users.php">Menaxho Përdoruesit</a></li>
+            <li><a href="cars.php">Menaxho Makinat</a></li>
+            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+            <li><a href="manage_news.php">Menaxho News</a></li>
     </ul>
 </div>
 
@@ -216,7 +268,7 @@ $content = $result->fetch_all(MYSQLI_ASSOC);
 
     <button id="addContentButton" class="add-content-btn" onclick="showAddContentForm()">Shto Përmbajtje</button>
 
-    <div id="addContentForm">
+    <div id="addContentForm" class="add-content-form">
         <h2>Shto Përmbajtje të Re</h2>
         <form method="POST">
             <textarea name="content" placeholder="Përmbajtja" required></textarea>

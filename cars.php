@@ -2,16 +2,13 @@
 require_once 'db_connection.php';
 session_start();
 
-
 if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === false) {
     header("Location: MyAccount.php");
     exit;
 }
 
-
 $db = new Database();
 $conn = $db->getConnection();
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_car"])) {
     $name = $_POST["name"];
@@ -19,9 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_car"])) {
     $year = $_POST["year"];
     $price = $_POST["price"];
 
-  
     $targetDir = "uploads/";
-    
     
     if (!is_dir($targetDir)) {
         mkdir($targetDir, 0777, true);
@@ -43,11 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_car"])) {
     }
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_car"])) {
     $car_id = $_POST["car_id"];
 
-    
     $stmt = $conn->prepare("SELECT image FROM cars WHERE id = ?");
     $stmt->bind_param("i", $car_id);
     $stmt->execute();
@@ -80,9 +73,8 @@ $cars = $result->fetch_all(MYSQLI_ASSOC);
     <title>Menaxho Makinat</title>
     <link rel="stylesheet" href="dashboard.css">
     <style>
-       
         .add-car-btn {
-            background-color:#f0a500;
+            background-color: #f0a500;
             color: white;
             padding: 10px 20px;
             font-size: 16px;
@@ -93,22 +85,83 @@ $cars = $result->fetch_all(MYSQLI_ASSOC);
         }
 
         .add-car-btn:hover {
-            background-color:#f1c40f;
+            background-color: #f1c40f;
         }
 
-        
         #addCarForm {
-            display: none;
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 15px; 
             margin-top: 20px;
+            width: 40%; 
+            margin-left: auto; 
+            margin-right: auto;
         }
+
+        #addCarForm input,
+        #addCarForm textarea,
+        #addCarForm button {
+            width: 100%; 
+            padding: 8px;
+            margin-bottom: 8px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #addCarForm button {
+            background-color: #f0a500; 
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #addCarForm button:hover {
+            background-color: #f1c40f;
+        }
+
+        #addCarForm input[type="file"] {
+            padding: 10px 0;
+        }
+       
+.delete-btn {
+    background-color: #f0a500; 
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-right: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #f1c40f;
+}
+
+.edit-link {
+    font-size: 14px;
+   background-color: #f0a500; 
+    text-decoration: none;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-link:hover {
+  
+    background-color: #f1c40f;
+}
+
+
+
     </style>
     <script>
-        
         function showAddCarForm() {
             var form = document.getElementById("addCarForm");
             var btn = document.getElementById("addCarButton");
 
-            
             if (form.style.display === "none") {
                 form.style.display = "block";
                 btn.textContent = "Fshih Formën";
@@ -153,26 +206,23 @@ $cars = $result->fetch_all(MYSQLI_ASSOC);
     </ul>  
 </nav>
 
-
 <div class="sidebar">
     <h2>Car Dealership - Admin Panel</h2>
     <ul>
-        <li><a href="users.php">Menaxho Përdoruesit</a></li>
-        <li><a href="cars.php">Menaxho Makinat</a></li>
-        <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
-        <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
-        <li><a href="manage_news.php">Menaxho News</a></li>
+    <li><a href="users.php">Menaxho Përdoruesit</a></li>
+            <li><a href="cars.php">Menaxho Makinat</a></li>
+            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+            <li><a href="manage_news.php">Menaxho News</a></li>
     </ul>
 </div>
 
 <div class="content">
     <h1>Menaxho Makinat</h1>
 
-   
     <button id="addCarButton" class="add-car-btn" onclick="showAddCarForm()">Shto Makinë</button>
 
- 
-    <div id="addCarForm">
+    <div id="addCarForm" style="display: none;">
         <h2>Shto Makinë të Re</h2>
         <form method="POST" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Emri i makinës" required>
@@ -202,12 +252,13 @@ $cars = $result->fetch_all(MYSQLI_ASSOC);
             <td><?= number_format($car['price'], 2) ?>€</td>
             <td><img src="uploads/<?= htmlspecialchars($car['image']) ?>" width="100"></td>
             <td>
-                <form method="POST">
-                    <input type="hidden" name="car_id" value="<?= $car['id'] ?>">
-                    <button type="submit" name="delete_car">Fshij</button>
-                </form>
-                <a href="edit_car.php?id=<?= $car['id'] ?>">Edito</a>
+            <form method="POST">
+    <input type="hidden" name="car_id" value="<?= $car['id'] ?>">
+    <button type="submit" name="delete_car" class="delete-btn">Fshij</button>
+</form>
+<a href="edit_car.php?id=<?= $car['id'] ?>" class="edit-link">Edito</a>
 
+              
             </td>
         </tr>
         <?php endforeach; ?>

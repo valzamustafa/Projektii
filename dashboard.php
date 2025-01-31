@@ -53,9 +53,10 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
     <div class="sidebar">
         <h2>Car Dealership - Admin Panel</h2>
         <ul>
+
             <li><a href="users.php">Menaxho Përdoruesit</a></li>
             <li><a href="cars.php">Menaxho Makinat</a></li>
-            <li><a href="add_content.php">Menaxho Content</a></li>
+            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
             <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
             <li><a href="manage_news.php">Menaxho News</a></li>
         </ul>
@@ -65,11 +66,11 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
    
 
 
-    <button id="showCarForm">Shto Makinë të Re</button>
+    <!-- <button id="showCarForm">Shto Makinë të Re</button> -->
 
    
-    <div id="carFormContainer" style="display: none;"></div>
-    <button id="showAboutUsForm" onclick="document.getElementById('aboutUsFormContainer').style.display='block'">Edito Përmbajtjen e About Us</button>
+    <!-- <div id="carFormContainer" style="display: none;"></div>
+    <button id="showAboutUsForm" onclick="document.getElementById('aboutUsFormContainer').style.display='block'">Edito Përmbajtjen e About Us</button> -->
 
 
     <script src="dashboard.js"></script>
