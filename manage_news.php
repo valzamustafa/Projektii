@@ -301,7 +301,7 @@ $result = $newsManager->getAllNews();
                 <td><?php echo $row['created_at']; ?></td>
                 <td>
                     
-                    <a href="manage_news.php?delete=<?php echo $row['id']; ?>" class="delete-link" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a href="manage_news.php?delete=<?php echo $row['id']; ?>" class="delete-link" onclick="return confirm('Are you sure?')">Fshij</a>
 
                     <form action="edit_news.php" method="GET" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
