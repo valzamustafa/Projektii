@@ -1,78 +1,69 @@
 <?php
 require_once 'db_connection.php';
+require_once 'Car.php';
 session_start();
-
 
 if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === false) {
     header("Location: MyAccount.php");
     exit;
 }
 
-
 $db = new Database();
 $conn = $db->getConnection();
 
+// Krijo një instancë të klasës Car
+$car = new Car($conn);
 
 if (isset($_GET['id'])) {
     $car_id = $_GET['id'];
    
-    $stmt = $conn->prepare("SELECT * FROM cars WHERE id = ?");
-    $stmt->bind_param("i", $car_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $car = $result->fetch_assoc();
-    $stmt->close();
+    // Merr makinen nga ID
+    $carData = $car->getCarById($car_id);
 
-
-    if (!$car) {
+    if (!$carData) {
         echo "Makina nuk u gjet.";
         exit;
     }
+
+    // Përshtat objektin Car me të dhënat nga baza e të dhënave
+    $car = new Car($conn, $carData['id'], $carData['name'], $carData['description'], $carData['image'], $carData['year'], $carData['price']);
 } else {
     echo "ID e makinës nuk është e vlefshme.";
     exit;
 }
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_car"])) {
-    $name = $_POST["name"];
-    $description = $_POST["description"];
-    $year = $_POST["year"];
-    $price = $_POST["price"];
+    // Përdorim metodën e klasës për të përditësuar vlerat
+    $car->name = $_POST["name"];
+    $car->description = $_POST["description"];
+    $car->year = $_POST["year"];
+    $car->price = $_POST["price"];
 
- 
-    $imageName = $car['image']; 
+    // Përdor emrin aktual të imazhit, përderisa përdoruesi nuk ngarkon një tjetër
+    $imageName = $car->image;
 
     if ($_FILES["image"]["name"]) {
-        $targetDir = "uploads/";
+        // Nëse ngarkohet një imazh i ri, përdorim metodën uploadImage
+        $imageName = $car->uploadImage($_FILES["image"]);
 
-       
-        if (!is_dir($targetDir)) {
-            mkdir($targetDir, 0777, true);
-        }
-
-        $imageName = time() . "_" . basename($_FILES["image"]["name"]);
-        $targetFile = $targetDir . $imageName;
-
-        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-            
-            if (file_exists("uploads/" . $car['image'])) {
-                unlink("uploads/" . $car['image']);
-            }
+        // Nëse ngarkohet një imazh i ri, fshi imazhin e vjetër
+        if ($imageName && file_exists("uploads/" . $car->image)) {
+            unlink("uploads/" . $car->image);
         } else {
             echo "Gabim gjatë ngarkimit të imazhit.";
             exit;
         }
     }
 
-    
-    $stmt = $conn->prepare("UPDATE cars SET name = ?, description = ?, image = ?, year = ?, price = ? WHERE id = ?");
-    $stmt->bind_param("sssiii", $name, $description, $imageName, $year, $price, $car_id);
-    $stmt->execute();
-    $stmt->close();
+    $car->image = $imageName;
 
-    header("Location: cars.php");
-    exit;
+    // Përdorim metodën updateCar për të përditësuar makinën
+    if ($car->updateCar()) {
+        header("Location: cars.php");
+        exit;
+    } else {
+        echo "Gabim gjatë përditësimit të makinës.";
+    }
 }
 ?>
 
@@ -82,10 +73,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_car"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redakto Makina</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
-<body>
-    <style>
+<style>
       * {
     margin: 0;
     padding: 0;
@@ -313,8 +303,10 @@ form button:hover {
 }
 
 
+
     </style>
-    <nav>
+<body>
+<nav>
     <ul class="slidebar" style="display: none;">
         <li onclick="hideSideBar()">
             <a href="#">
@@ -347,50 +339,38 @@ form button:hover {
     </ul>  
 </nav>
 <div class="sidebar">
-    <h2>Car Dealership - Admin Panel</h2>
-    <ul>
-   
-    <li><a href="users.php">Menaxho Përdoruesit</a></li>
+        <h2>Car Dealership - Admin Panel</h2>
+        <ul>
+
+            <li><a href="users.php">Menaxho Përdoruesit</a></li>
             <li><a href="cars.php">Menaxho Makinat</a></li>
             <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
             <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
             <li><a href="manage_news.php">Menaxho News</a></li>
-    </ul>
-</div>
+        </ul>
+    </div>
+        <div class="edit-form">
+            <h2>Redakto Makina</h2>
+            <form action="edit_car.php?id=<?php echo $car->id; ?>" method="post" enctype="multipart/form-data">
+                <label for="name">Emri</label>
+                <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($car->name); ?>" required>
 
-<div class="content">
-    <h1>Edito Makina</h1>
-    
-    <form method="POST" enctype="multipart/form-data" class="edit-form">
-        <div class="form-group">
-            <label for="name">Emri i makinës</label>
-            <input type="text" name="name" id="name" placeholder="Emri i makinës" value="<?= htmlspecialchars($car['name']) ?>" required>
+                <label for="description">Përshkrimi</label>
+                <textarea id="description" name="description" required><?php echo htmlspecialchars($car->description); ?></textarea>
+
+                <label for="year">Viti</label>
+                <input type="text" id="year" name="year" value="<?php echo htmlspecialchars($car->year); ?>" required>
+
+                <label for="price">Çmimi</label>
+                <input type="text" id="price" name="price" value="<?php echo htmlspecialchars($car->price); ?>" required>
+
+                <label for="image">Imazhi (Lini i hapur për të ngarkuar një tjetër imazh)</label>
+                <input type="file" id="image" name="image">
+
+                <button type="submit" name="edit_car">Përditëso</button>
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="description">Përshkrimi</label>
-            <textarea name="description" id="description" placeholder="Përshkrimi" required><?= htmlspecialchars($car['description']) ?></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="image">Përzgjedhja e Imazhit</label>
-            <input type="file" name="image" id="image" accept="image/*">
-        </div>
-
-        <div class="form-group">
-            <label for="year">Viti</label>
-            <input type="number" name="year" id="year" placeholder="Viti" value="<?= htmlspecialchars($car['year']) ?>" required>
-        </div>
-
-        <div class="form-group">
-            <label for="price">Çmimi (€)</label>
-            <input type="number" name="price" id="price" placeholder="Çmimi (€)" value="<?= htmlspecialchars($car['price']) ?>" required>
-        </div>
-
-        <button type="submit" name="edit_car" class="submit-btn">Përditëso Makinën</button>
-    </form>
-</div>
-
-<script src="dashboard.js"></script>
+    </div>
+    <script src="dashboard.js"></script>
 </body>
 </html>

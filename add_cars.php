@@ -1,20 +1,29 @@
 <?php
 include('Car.php');
+require_once 'db_connection.php';
+
+$db = new Database();
+$conn = $db->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+A
     $name = $_POST['name'];
     $description = $_POST['description'];
     $year = $_POST['year'];
     $price = $_POST['price'];
     $image = $_POST['image'];
 
-    $car = new Car();
-    if ($car->addCar($name, $description, $year, $price, $image)) {
+ 
+    $car = new Car($conn, $name, $description, $year, $price, $image);
+
+    if ($car->addCar()) {
         echo "Car added successfully!";
     } else {
         echo "Failed to add car.";
     }
 }
+
+$db->closeConnection();
 ?>
 
 <form method="POST" action="add_car.php">
