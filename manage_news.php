@@ -311,5 +311,6 @@ $result = $newsManager->getAllNews();
             </tr>
         <?php } ?>
     </table>
+    <script src="dashboard.js" ></script>
 </body>
 </html>
