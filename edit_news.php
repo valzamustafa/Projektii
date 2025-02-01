@@ -191,14 +191,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <button type="submit">Update</button>
     </form>
-    <script>  function showSidebar() {
-        const sidebar = document.querySelector('.slidebar');
-        sidebar.style.display = 'flex'; 
-        }
-
-        function hideSideBar() {
-        const sidebar = document.querySelector('.slidebar');
-        sidebar.style.display = 'none'; 
-        }</script> 
+    <script src="dashboard.js"></script>
 </body>
 </html>

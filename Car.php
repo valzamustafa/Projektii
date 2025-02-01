@@ -40,16 +40,16 @@ class Car {
     public function uploadImage($imageFile) {
         $targetDir = "uploads/";
 
-  
-        if (!is_dir($targetDir)) {
+
+        if (!isdir($targetDir)) {
             mkdir($targetDir, 0777, true);
         }
 
-        $imageName = time() . "_" . basename($imageFile["name"]);
+        $imageName = time() . "" . basename($imageFile["name"]);
         $targetFile = $targetDir . $imageName;
 
         if (move_uploaded_file($imageFile["tmp_name"], $targetFile)) {
-       
+
             return $imageName;
         }
         return false;

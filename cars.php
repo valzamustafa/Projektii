@@ -225,17 +225,15 @@ $cars = $car->getCars();
         </ul>  
     </nav>
     <div class="sidebar">
-    <div class="sidebar">
-        <h2>Admin Panel-About Us</h2>
-        <ul>
-
-            <li><a href="users.php">Menaxho Përdoruesit</a></li>
-            <li><a href="cars.php">Menaxho Makinat</a></li>
-            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
-            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
-            <li><a href="manage_news.php">Menaxho News</a></li>
-        </ul>
-    </div>
+    <h2>Admin Panel - About Us</h2>
+    <ul>
+        <li><a href="users.php">Menaxho Përdoruesit</a></li>
+        <li><a href="cars.php">Menaxho Makinat</a></li>
+        <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+        <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+        <li><a href="manage_news.php">Menaxho News</a></li>
+    </ul>
+</div>
 
     <div class="content">
         <h1>Menaxho Makinat</h1>
