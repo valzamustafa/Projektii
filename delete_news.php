@@ -1,36 +1,21 @@
 <?php
-require_once 'db_connection.php';
+include('db_connection.php');
 
-class AboutUsManager {
-    private $db;
+$database = new Database();
+$conn = $database->getConnection();
 
-    public function __construct() {
-        $this->db = new Database();
+$news = new News($conn);
+
+if (isset($_GET['delete'])) {
+    $content_id = $_GET['delete'];
+
+    if ($news->deleteNews($content_id)) {
+        header("Location: manage_news.php");
+        exit;
+    } else {
+        echo "Error deleting the news item.";
     }
-
-    public function deleteContent($id) {
-        $conn = $this->db->getConnection();
-        $stmt = $conn->prepare("DELETE FROM about_us WHERE id = ?");
-        $stmt->bind_param("i", $id);
-
-        if ($stmt->execute()) {
-
-            header("Location:add_content.php"); 
-            exit;
-        } else {
-            echo "Gabim gjatë fshirjes së përmbajtjes: " . $stmt->error;
-        }
-
-        $this->db->closeConnection();
-    }
-}
-
-
-if (isset($_POST['id']) && is_numeric($_POST['id'])) {
-    $id = $_POST['id'];
-    $aboutUsManager = new AboutUsManager();
-    $aboutUsManager->deleteContent($id);
 } else {
-    echo "Gabim: Parametri ID është i munguar ose jo i vlefshëm!";
+    echo "No news ID specified for deletion.";
 }
 ?>

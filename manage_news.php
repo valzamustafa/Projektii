@@ -236,13 +236,13 @@ $result = $newsManager->getAllNews();
     </ul>  
 </nav>
 <div class="sidebar">
-    <h2>Admin Panel - News</h2>
+    <h2>Admin Panel - About Us</h2>
     <ul>
-    <li><a href="users.php">Menaxho Përdoruesit</a></li>
-            <li><a href="cars.php">Menaxho Makinat</a></li>
-            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
-            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
-            <li><a href="manage_news.php">Menaxho News</a></li>
+        <li><a href="users.php">Menaxho Përdoruesit</a></li>
+        <li><a href="cars.php">Menaxho Makinat</a></li>
+        <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+        <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+        <li><a href="manage_news.php">Menaxho Përmbajtjen e About Us</a></li>
     </ul>
 </div>
 
@@ -301,7 +301,7 @@ $result = $newsManager->getAllNews();
                 <td><?php echo $row['created_at']; ?></td>
                 <td>
                     
-                    <a href="manage_news.php?delete=<?php echo $row['id']; ?>" class="delete-link" onclick="return confirm('Are you sure?')">Fshij</a>
+                    <a href="manage_news.php?delete=<?php echo $row['id']; ?>" class="delete-link" onclick="return confirm('Are you sure?')">Delete</a>
 
                     <form action="edit_news.php" method="GET" style="display:inline;">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">

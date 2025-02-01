@@ -9,7 +9,7 @@ class Car {
     private $conn;
 
     public function __construct($conn, $id = null, $name = null, $description = null, $image = null, $year = null, $price = null) {
-        $this->conn = $conn; 
+        $this->conn = $conn; // Lidhja me bazën e të dhënave
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
@@ -40,16 +40,16 @@ class Car {
     public function uploadImage($imageFile) {
         $targetDir = "uploads/";
 
-
-        if (!isdir($targetDir)) {
+  
+        if (!is_dir($targetDir)) {
             mkdir($targetDir, 0777, true);
         }
 
-        $imageName = time() . "" . basename($imageFile["name"]);
+        $imageName = time() . "_" . basename($imageFile["name"]);
         $targetFile = $targetDir . $imageName;
 
         if (move_uploaded_file($imageFile["tmp_name"], $targetFile)) {
-
+       
             return $imageName;
         }
         return false;

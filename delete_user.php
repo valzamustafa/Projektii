@@ -11,12 +11,12 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
 if (isset($_GET['id'])) {
     $email = $_GET['id'];
 
-
+    
     $database = new Database();
     $conn = $database->getConnection();
     $user = new User($conn);
 
-
+   
     if ($user->deleteUser($email)) {
         echo "Përdoruesi është fshirë me sukses.";
     } else {
@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
 
     $conn->close();
 
-
+   
     header("Location: users.php");
     exit;
 } else {
