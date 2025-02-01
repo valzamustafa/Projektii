@@ -9,14 +9,23 @@ class Car {
     private $conn;
 
     public function __construct($conn, $id = null, $name = null, $description = null, $image = null, $year = null, $price = null) {
-        $this->conn = $conn; // Lidhja me bazën e të dhënave
+        $this->conn = $conn; 
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
-        $this->image = $image;
         $this->year = $year;
         $this->price = $price;
+        $this->image = $image;
+       
+        
     }
+    public function addCar() {
+        $query = "INSERT INTO cars (name, description, image, year, price) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("sssii", $this->name, $this->description, $this->image, $this->year, $this->price);
+        return $stmt->execute();
+    }
+    
 
     public function getCarById($car_id) {
         $query = "SELECT * FROM cars WHERE id = ?";

@@ -6,15 +6,13 @@ $db = new Database();
 $conn = $db->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-A
     $name = $_POST['name'];
     $description = $_POST['description'];
     $year = $_POST['year'];
     $price = $_POST['price'];
     $image = $_POST['image'];
 
- 
-    $car = new Car($conn, $name, $description, $year, $price, $image);
+    $car = new Car($conn, null, $name, $description, $image, $year, $price);
 
     if ($car->addCar()) {
         echo "Car added successfully!";
@@ -24,6 +22,7 @@ A
 }
 
 $db->closeConnection();
+
 ?>
 
 <form method="POST" action="add_car.php">
