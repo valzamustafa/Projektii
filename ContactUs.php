@@ -2,10 +2,8 @@
 include('db_connection.php');
 include('ContactMessage.php');
 
-
 $database = new Database();
 $conn = $database->getConnection();
-
 
 $contactMessage = new ContactMessage($conn);
 
@@ -16,14 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($name) && !empty($email) && !empty($message)) {
         if ($contactMessage->sendMessage($name, $email, $message)) {
-            $success_message = "Mesazhi juaj u dërgua me sukses!";
+            echo "<script>alert('Mesazhi juaj u dërgua me sukses!'); window.location.href='ContactUs.php';</script>";
         } else {
-            $error_message = "Kishte një problem gjatë dërgimit të mesazhit.";
+            echo "<script>alert('Kishte një problem gjatë dërgimit të mesazhit.'); window.location.href='ContactUs.php';</script>";
         }
     } else {
-        $error_message = "Ju lutemi plotësoni të gjitha fushat e formularit.";
+        echo "<script>alert('Ju lutemi plotësoni të gjitha fushat e formularit.'); window.location.href='ContactUs.php';</script>";
     }
-}
+}    
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <li><a href="Register.php">Sign Up</a></li>
         <li><a href="LogIn.php">Log In</a></li>
         <li><a href="MyFavorites.php">My Favorites</a></li>
-        <li><a href="log.out.php">Log Out</a></li>
         <hr>
     </ul>  
 
@@ -110,6 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
 
+      
         <?php if (isset($success_message)) { ?>
             <div class="success-message"><?php echo $success_message; ?></div>
         <?php } ?>
