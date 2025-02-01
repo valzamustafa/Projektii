@@ -9,14 +9,23 @@ class Car {
     private $conn;
 
     public function __construct($conn, $id = null, $name = null, $description = null, $image = null, $year = null, $price = null) {
-        $this->conn = $conn;
+        $this->conn = $conn; 
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
-        $this->image = $image;
         $this->year = $year;
         $this->price = $price;
+        $this->image = $image;
+
+
     }
+    public function addCar() {
+        $query = "INSERT INTO cars (name, description, image, year, price) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("sssii", $this->name, $this->description, $this->image, $this->year, $this->price);
+        return $stmt->execute();
+    }
+
 
     public function getCarById($car_id) {
         $query = "SELECT * FROM cars WHERE id = ?";
@@ -40,16 +49,16 @@ class Car {
     public function uploadImage($imageFile) {
         $targetDir = "uploads/";
 
-  
-        if (!is_dir($targetDir)) {
+
+        if (!isdir($targetDir)) {
             mkdir($targetDir, 0777, true);
         }
 
-        $imageName = time() . "_" . basename($imageFile["name"]);
+        $imageName = time() . "" . basename($imageFile["name"]);
         $targetFile = $targetDir . $imageName;
 
         if (move_uploaded_file($imageFile["tmp_name"], $targetFile)) {
-       
+
             return $imageName;
         }
         return false;
