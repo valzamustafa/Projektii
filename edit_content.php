@@ -152,15 +152,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_content"])) {
         </ul>  
     </nav>
 
-<div class="sidebar">
-    <h2>Admin Panel</h2>
-    <ul>
-        <li><a href="users.php">Menaxho Përdoruesit</a></li>
-        <li><a href="about_us.php">Menaxho About Us</a></li>
-        <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
-    </ul>
-</div>
+    <div class="sidebar">
+        <h2>Car Dealership - Admin Panel</h2>
+        <ul>
 
+            <li><a href="users.php">Menaxho Përdoruesit</a></li>
+            <li><a href="cars.php">Menaxho Makinat</a></li>
+            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+            <li><a href="manage_news.php">Menaxho News</a></li>
+        </ul>
+    </div>
 <div class="content">
     <h1>......................Edito Përmbajtjen</h1>
     <form method="POST">

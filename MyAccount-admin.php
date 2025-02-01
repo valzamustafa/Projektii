@@ -72,11 +72,12 @@ if (!isset($_SESSION['email'])) {
 
         <div class="sidebar">
             <ul>
-                <li>Account Information</li>
-                <li><a href="MyFavorites.php">My Favorites</a></li>
-                <li><a href="Register.php">Create Account</a></li>
-                <li><a href="log.out.php">Log Out</a></li>
-                <li><a href="dashboard.php">Dashboard</a></li>
+              
+            <li><a href="users.php">Menaxho Përdoruesit</a></li>
+            <li><a href="cars.php">Menaxho Makinat</a></li>
+            <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
+            <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
+            <li><a href="manage_news.php">Menaxho News</a></li>
               
                 <?php if (isset($_SESSION['email']) && strpos($_SESSION['email'], '@admin.com') !== false): ?>
                     <li><a href="MyAccount-admin.php">Dashboard</a></li>
