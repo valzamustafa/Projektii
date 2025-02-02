@@ -49,12 +49,11 @@ class Car {
     }
 }
 
-// Instantiate the Car class
+
 $db = new Database();
 $conn = $db->getConnection();
 $car = new Car($conn);
 
-// Handle the form submission for adding a car
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_car"])) {
     $name = $_POST["name"];
     $description = $_POST["description"];
@@ -79,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_car"])) {
     }
 }
 
-// Handle the form submission for deleting a car
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_car"])) {
     $car_id = $_POST["car_id"];
     $car->deleteCar($car_id);
@@ -87,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_car"])) {
     exit;
 }
 
-// Fetch all cars
+
 $cars = $car->getCars();
 ?>
 
@@ -283,6 +282,6 @@ $cars = $car->getCars();
         </table>
     </div>
 
-    <script src="dashboard.css"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>

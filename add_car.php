@@ -21,11 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($year && $price && isset($_FILES["image"])) {
         $car = new Car($conn);
 
-        // Ngarko imazhin dhe merr emrin e skedarit
+
         $imageName = $car->uploadImage($_FILES["image"]);
 
         if ($imageName) {
-            // Shto makinën në bazën e të dhënave
+           
             if ($car->addCar($name, $description, $year, $price, $imageName)) {
                 header("Location: cars.php");
                 exit;

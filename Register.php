@@ -61,12 +61,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
-    <nav>
+<nav>
         <ul class="slidebar" style="display: none;">
             <li onclick="hideSideBar()">
-                <a href="#">
-                    <img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24">
-                </a>
+                <a href="#"><img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24"></a>
             </li>
             <li><a href="home.php">Home</a></li>
             <li><a href="AboutUs.php">About Us</a></li>
@@ -85,15 +83,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
             <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
             <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
-            <li class="hideOnMobile"><a href="MyAccoutn.php">My Account</a></li>
+            <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
             <li class="menubutton" onclick="showSidebar()">
-                <a href="#">
-                    <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
-                </a>
+                <a href="#"><img src="images/menuwhite.png" alt="Menu" height="24" width="24"></a>
             </li>
         </ul>  
     </nav>
-
     <div class="container">
         <div class="Create-class">
             <h2>Create Account</h2>

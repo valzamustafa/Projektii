@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_content"])) {
     }
 }
     </style>
-  <nav>
+   <nav>
         <ul class="slidebar" style="display: none;">
             <li onclick="hideSideBar()">
                 <a href="#"><img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24"></a>
