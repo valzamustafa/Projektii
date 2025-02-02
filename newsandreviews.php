@@ -37,22 +37,38 @@ class NewsManager {
             <link rel="stylesheet" href="newsandreviews.css">
         </head>
         <body>
-            <nav>
-                <ul class="navbar">
-                    <li><a href="#">Maidon</a></li>
-                    <li class="hideOnMobile"><a href="home.php">Home</a></li>
-                    <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
-                    <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
-                    <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
-                    <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
-                    <li class="menubutton" onclick="showSidebar()">
-                        <a href="#">
-                            <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <nav>
+    <ul class="slidebar" style="display: none;">
+        <li onclick="hideSideBar()">
+            <a href="#">
+                <img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24">
+            </a>
+        </li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="AboutUs.php">About Us</a></li>
+        <li><a href="ContactUs.php">Contact Us</a></li>
+        <li><a href="newsandreviews.php">News and Reviews</a></li>
+        <li><a href="MyAccount.php">My Account</a></li>
+        <li><a href="Register.php">Sign Up</a></li>
+        <li><a href="LogIn.php">Log In</a></li>
+        <li><a href="MyFavorites.php">My Favorites</a></li>
+        <hr>
+    </ul>  
 
+    <ul class="navbar">
+        <li><a href="#">Maidon</a></li>
+        <li class="hideOnMobile"><a href="home.php">Home</a></li>
+        <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+        <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+        <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+        <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+        <li class="menubutton" onclick="showSidebar()">
+            <a href="#">
+                <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+            </a>
+        </li>
+    </ul>  
+</nav>
             <main class="main-container">
                 <section class="featured">
                     <h2>Featured News</h2>
@@ -88,7 +104,7 @@ class NewsManager {
                 </section>
             </main>
 
-            <
+            
     <div class="footer">
     <div class="footer-box locations">
         <h2>Our Locations</h2>
@@ -133,7 +149,7 @@ class NewsManager {
     }
 </script>
 
-            <script src="newsandreviews.js"></script>
+           
         </body>
         </html>
         <?php
