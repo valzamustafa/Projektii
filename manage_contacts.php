@@ -84,5 +84,6 @@ $result = $contactMessage->getMessages();
         </tr>
         <?php } ?>
     </table>
+    <script src="dashboard.js"></script>
 </body>
 </html>
