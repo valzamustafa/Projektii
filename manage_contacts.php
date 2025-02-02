@@ -43,15 +43,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_news"])) {
     header("Location: delete_.php");
     exit;
 }
-
+// Include the database connection file
 include('db_connection.php');
 $database = new Database();
 $conn = $database->getConnection();
 
-
+// Initialize the NewsManager class
 $newsManager = new News($conn);
 
-
+// Add News functionality
 if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
@@ -65,14 +65,14 @@ if (isset($_POST['submit'])) {
     echo $message;
 }
 
-
+// Delete News functionality
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $message = $newsManager->deleteNews($id);
     echo $message;
 }
 
-
+// Get all news
 $result = $newsManager->getAllNews();
 
 ?>
@@ -203,34 +203,38 @@ $result = $newsManager->getAllNews();
 }
 
     </style>
- <nav>
-        <ul class="slidebar" style="display: none;">
-            <li onclick="hideSideBar()">
-                <a href="#"><img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24"></a>
-            </li>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="AboutUs.php">About Us</a></li>
-            <li><a href="ContactUs.php">Contact Us</a></li>
-            <li><a href="newsandreviews.php">News and Reviews</a></li>
-            <li><a href="MyAccount.php">My Account</a></li>
-            <li><a href="Register.php">Sign Up</a></li>
-            <li><a href="LogIn.php">Log In</a></li>
-            <li><a href="MyFavorites.php">My Favorites</a></li>
-            <hr>
-        </ul>  
+<nav>
+    <ul class="slidebar" style="display: none;">
+        <li onclick="hideSideBar()">
+            <a href="#">
+                <img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24">
+            </a>
+        </li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="AboutUs.php">About Us</a></li>
+        <li><a href="ContactUs.php">Contact Us</a></li>
+        <li><a href="newsandreviews.php">News and Reviews</a></li>
+        <li><a href="MyAccount.php">My Account</a></li>
+        <li><a href="Register.php">Sign Up</a></li>
+        <li><a href="LogIn.php">Log In</a></li>
+        <li><a href="MyFavorites.php">My Favorites</a></li>
+        <hr>
+    </ul>  
 
-        <ul class="navbar">
-            <li><a href="#">Maidon</a></li>
-            <li class="hideOnMobile"><a href="home.php">Home</a></li>
-            <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
-            <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
-            <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
-            <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
-            <li class="menubutton" onclick="showSidebar()">
-                <a href="#"><img src="images/menuwhite.png" alt="Menu" height="24" width="24"></a>
-            </li>
-        </ul>  
-    </nav>
+    <ul class="navbar">
+        <li><a href="#">Maidon</a></li>
+        <li class="hideOnMobile"><a href="home.php">Home</a></li>
+        <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+        <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+        <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+        <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+        <li class="menubutton" onclick="showSidebar()">
+            <a href="#">
+                <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+            </a>
+        </li>
+    </ul>  
+</nav>
 <div class="sidebar">
         <h2>Car Dealership - Admin Panel</h2>
         <ul>
@@ -242,6 +246,7 @@ $result = $newsManager->getAllNews();
             <li><a href="manage_news.php">Menaxho News</a></li>
         </ul>
     </div>
+
 
     <h2>Manage News</h2>
 
@@ -307,6 +312,5 @@ $result = $newsManager->getAllNews();
             </tr>
         <?php } ?>
     </table>
-    <script src="dashboard.js"></script>
 </body>
 </html>
