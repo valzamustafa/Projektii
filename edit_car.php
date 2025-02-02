@@ -11,12 +11,13 @@ if (!isset($_SESSION['email']) || strpos($_SESSION['email'], '@admin.com') === f
 $db = new Database();
 $conn = $db->getConnection();
 
+// Krijo një instancë të klasës Car
 $car = new Car($conn);
 
 if (isset($_GET['id'])) {
     $car_id = $_GET['id'];
    
-   
+    // Merr makinen nga ID
     $carData = $car->getCarById($car_id);
 
     if (!$carData) {
@@ -24,7 +25,7 @@ if (isset($_GET['id'])) {
         exit;
     }
 
-    
+    // Përshtat objektin Car me të dhënat nga baza e të dhënave
     $car = new Car($conn, $carData['id'], $carData['name'], $carData['description'], $carData['image'], $carData['year'], $carData['price']);
 } else {
     echo "ID e makinës nuk është e vlefshme.";
@@ -32,18 +33,20 @@ if (isset($_GET['id'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_car"])) {
-    
+    // Përdorim metodën e klasës për të përditësuar vlerat
     $car->name = $_POST["name"];
     $car->description = $_POST["description"];
     $car->year = $_POST["year"];
     $car->price = $_POST["price"];
 
+    // Përdor emrin aktual të imazhit, përderisa përdoruesi nuk ngarkon një tjetër
     $imageName = $car->image;
 
     if ($_FILES["image"]["name"]) {
-     
+        // Nëse ngarkohet një imazh i ri, përdorim metodën uploadImage
         $imageName = $car->uploadImage($_FILES["image"]);
 
+        // Nëse ngarkohet një imazh i ri, fshi imazhin e vjetër
         if ($imageName && file_exists("uploads/" . $car->image)) {
             unlink("uploads/" . $car->image);
         } else {
@@ -54,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit_car"])) {
 
     $car->image = $imageName;
 
-  
+    // Përdorim metodën updateCar për të përditësuar makinën
     if ($car->updateCar()) {
         header("Location: cars.php");
         exit;
@@ -304,44 +307,49 @@ form button:hover {
     </style>
 <body>
 <nav>
-        <ul class="slidebar" style="display: none;">
-            <li onclick="hideSideBar()">
-                <a href="#"><img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24"></a>
-            </li>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="AboutUs.php">About Us</a></li>
-            <li><a href="ContactUs.php">Contact Us</a></li>
-            <li><a href="newsandreviews.php">News and Reviews</a></li>
-            <li><a href="MyAccount.php">My Account</a></li>
-            <li><a href="Register.php">Sign Up</a></li>
-            <li><a href="LogIn.php">Log In</a></li>
-            <li><a href="MyFavorites.php">My Favorites</a></li>
-            <hr>
-        </ul>  
+    <ul class="slidebar" style="display: none;">
+        <li onclick="hideSideBar()">
+            <a href="#">
+                <img src="images/close_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Close Sidebar" height="24" width="24">
+            </a>
+        </li>
+        <li><a href="home.php">Home</a></li>
+        <li><a href="AboutUs.php">About Us</a></li>
+        <li><a href="ContactUs.php">Contact Us</a></li>
+        <li><a href="newsandreviews.php">News and Reviews</a></li>
+        <li><a href="MyAccount.php">My Account</a></li>
+        <li><a href="Register.php">Sign Up</a></li>
+        <li><a href="LogIn.php">Log In</a></li>
+        <li><a href="MyFavorites.php">My Favorites</a></li>
+        <hr>
+    </ul>  
 
-        <ul class="navbar">
-            <li><a href="#">Maidon</a></li>
-            <li class="hideOnMobile"><a href="home.php">Home</a></li>
-            <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
-            <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
-            <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
-            <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
-            <li class="menubutton" onclick="showSidebar()">
-                <a href="#"><img src="images/menuwhite.png" alt="Menu" height="24" width="24"></a>
-            </li>
-        </ul>  
-    </nav>
+    <ul class="navbar">
+        <li><a href="#">Maidon</a></li>
+        <li class="hideOnMobile"><a href="home.php">Home</a></li>
+        <li class="hideOnMobile"><a href="AboutUs.php">About Us</a></li>
+        <li class="hideOnMobile"><a href="ContactUs.php">Contact Us</a></li>
+        <li class="hideOnMobile"><a href="newsandreviews.php">News and Reviews</a></li>
+        <li class="hideOnMobile"><a href="MyAccount.php">My Account</a></li>
+        <li class="menubutton" onclick="showSidebar()">
+            <a href="#">
+                <img src="images/menuwhite.png" alt="Menu" height="24" width="24">
+            </a>
+        </li>
+    </ul>  
+</nav>
 <div class="sidebar">
-        <h2>Car Dealership - Admin Panel</h2>
-        <ul>
-
-            <li><a href="users.php">Menaxho Përdoruesit</a></li>
+    <h2>Car Dealership - Admin Panel</h2>
+    <ul>
+   
+    <li><a href="users.php">Menaxho Përdoruesit</a></li>
             <li><a href="cars.php">Menaxho Makinat</a></li>
             <li><a href="manage_contacts.php">Menaxho Mesazhet</a></li>
             <li><a href="add_content.php">Menaxho Përmbajtjen e About Us</a></li>
             <li><a href="manage_news.php">Menaxho News</a></li>
-        </ul>
-    </div>
+    </ul>
+</div>
+
         <div class="edit-form">
             <h2>Redakto Makina</h2>
             <form action="edit_car.php?id=<?php echo $car->id; ?>" method="post" enctype="multipart/form-data">
