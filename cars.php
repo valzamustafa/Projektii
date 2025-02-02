@@ -26,9 +26,11 @@ class Car {
         $stmt = $this->conn->prepare("SELECT image FROM cars WHERE id = ?");
         $stmt->bind_param("i", $car_id);
         $stmt->execute();
-        $stmt->bind_result($image);
-        $stmt->fetch();
+        $result = $stmt->get_result(); 
+        $row = $result->fetch_assoc(); 
+        $image = $row['image'] ?? null; 
         $stmt->close();
+        
 
         if ($image && file_exists("uploads/" . $image)) {
             unlink("uploads/" . $image);

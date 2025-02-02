@@ -136,7 +136,7 @@ nav li:first-child {
     margin-bottom: 20px;
 }
 
-.container {
+.content-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -144,7 +144,7 @@ nav li:first-child {
     margin-top: 50px;
 }
 
-.container p {
+.content-container p {
     font-size: 16px;
     color: lightgray;
     line-height: 1.5;
@@ -152,7 +152,7 @@ nav li:first-child {
 }
 
 .box {
-    width: 870px;
+    width:400px;
     height: 300px;
     border: 1px solid rgba(255, 255, 255, 0.3); 
     color: rgb(125, 118, 118);
@@ -190,6 +190,15 @@ nav li:first-child {
     text-align: center;
     margin: 20px;
 }
+.content-container{
+display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 100px; 
+    padding: 20px;
+}
+
 blockquote {
     font-size: 18px;
     font-style: italic;

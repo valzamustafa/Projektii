@@ -50,7 +50,7 @@ class Car {
         $targetDir = "uploads/";
 
 
-        if (!isdir($targetDir)) {
+        if (!is_dir($targetDir)) {
             mkdir($targetDir, 0777, true);
         }
 
