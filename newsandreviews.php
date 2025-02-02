@@ -137,17 +137,7 @@ class NewsManager {
 <div class="footer-bottom">
     <p>© 2024 Maidonn. All rights reserved.</p>
 </div>
-<script>
-    function showSidebar() {
-    const sidebar = document.querySelector('.slidebar');
-    sidebar.style.display = 'flex'; 
-    }
-    
-    function hideSideBar() {
-    const sidebar = document.querySelector('.slidebar');
-    sidebar.style.display = 'none'; 
-    }
-</script>
+<script src="newsandreviews.js"></script>
 
            
         </body>
